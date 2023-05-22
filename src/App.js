@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Courses from './componant/Courses';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import LogInPage from './componant/LogInPage';
+import AboutUs from './componant/AboutUs';
+import { Route,Routes } from 'react-router-dom';
+// import Register from './componant/register';
+// import Error from 'next/error';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Routes>
+      {/* <Route path='/' element={<Home/>}/> */}
+      <Route path='/login' element={<LogInPage/>}/>
+      <Route path='/courses' element={<Courses/>}/> 
+      <Route path='/aboutus' element={<AboutUs/>}/> 
+      {/* <Route path='/aboutus' element={<Register/>}/> */}
+      {/* <Route path='/error' element={<Error/>}/>  */}
+
+
+
+    </Routes>
+    
+    </>
   );
 }
 
