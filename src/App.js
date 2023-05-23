@@ -5,7 +5,7 @@ import LogInPage from './componant/LogInPage';
 import AboutUs from './componant/AboutUs';
 import { Route,Routes } from 'react-router-dom';
 // import Register from './componant/register';
-// import Error from 'next/error';
+import Error from './componant/error.js';
 function App() {
   return (
     <>
@@ -15,7 +15,7 @@ function App() {
       <Route path='/courses' element={<Courses/>}/> 
       <Route path='/aboutus' element={<AboutUs/>}/> 
       {/* <Route path='/aboutus' element={<Register/>}/> */}
-      {/* <Route path='/error' element={<Error/>}/>  */}
+      <Route path='*' element={<Error/>}/> 
 
 
 

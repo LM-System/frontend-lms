@@ -35,7 +35,7 @@ const Error = () => (
           >
             <img
               alt="Under development"
-              src="/assets/errors/error-404.png"
+              src="./assets/error page.webp"
               style={{
                 display: 'inline-block',
                 maxWidth: '100%',
