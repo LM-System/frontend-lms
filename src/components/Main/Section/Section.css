@@ -1,0 +1,13 @@
+section {
+  width: calc(100% -  var(--side-bar-full-width) + 0.013px);
+  margin-left: auto;
+  transition: 0.5s ease;
+  padding: 20px;
+}
+
+@media (max-width: 992px) {
+  section {
+    width: calc(100% - var(--secondary-side-bar-width));
+    transition: 0.35s ease;
+  }
+}

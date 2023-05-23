@@ -1,0 +1,49 @@
+.side-bar {
+  position: fixed;
+  display: flex;
+  flex-flow: column;
+  background-color: #fafafa;
+  width: var(--side-bar-full-width);
+  align-items: center;
+  padding: 30px;
+  height: 100vh;
+  transition: 0.5s;
+  left: 0;
+}
+.side-bar.dark {
+  background-color: var(--dark-mode-background);
+}
+
+.side-bar a {
+  text-decoration: none;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.logo img{
+  width: 30px;
+}
+.logo span {
+  color: var(--dark-mode-color);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.side-bar.dark .logo span {
+  color: white;
+}
+.hidden {
+  left: -250px;
+}
+@media (max-width: 992px) {
+  .logo span { 
+    display: none; 
+  }
+  .side-bar {
+    width: var(--secondary-side-bar-width);
+    transition: 0.35s ease;
+  }
+}
