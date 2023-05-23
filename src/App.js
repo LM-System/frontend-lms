@@ -1,4 +1,5 @@
 import './App.css';
+import JScourse from './componant/JScourse';
 import Courses from './componant/Courses';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogInPage from './componant/LogInPage';
@@ -15,7 +16,8 @@ function App() {
       <Route path='/courses' element={<Courses/>}/> 
       <Route path='/aboutus' element={<AboutUs/>}/> 
       {/* <Route path='/aboutus' element={<Register/>}/> */}
-      <Route path='*' element={<Error/>}/> 
+      <Route path='*' element={<Error/>}/>
+      <Route path='/JScourse' element={<JScourse/>}/> 
 
 
 

@@ -1,65 +1,19 @@
-import Head from 'next/head';
-import NextLink from 'next/link';
+import './error.css'
+import { Link } from "react-router-dom";
 import ArrowLeftIcon from '@heroicons/react/24/solid/ArrowLeftIcon';
 import { Box, Button, Container, SvgIcon, Typography } from '@mui/material';
 
-const Error = () => (
-  <>
-    <Head>
-      <title>
-        404 | Devias Kit
-      </title>
-    </Head>
-    <Box
-      component="main"
-      sx={{
-        alignItems: 'center',
-        display: 'flex',
-        flexGrow: 1,
-        minHeight: '100%'
-      }}
-    >
-      <Container maxWidth="md">
-        <Box
-          sx={{
-            alignItems: 'center',
-            display: 'flex',
-            flexDirection: 'column'
-          }}
-        >
-          <Box
-            sx={{
-              mb: 3,
-              textAlign: 'center'
-            }}
-          >
-            <img
-              alt="Under development"
-              src="./assets/error page.webp"
-              style={{
-                display: 'inline-block',
-                maxWidth: '100%',
-                width: 400
-              }}
-            />
-          </Box>
-          <Typography
-            align="center"
-            sx={{ mb: 3 }}
-            variant="h3"
-          >
-            404: The page you are looking for isn’t here
-          </Typography>
-          <Typography
-            align="center"
-            color="text.secondary"
-            variant="body1"
-          >
-            You either tried some shady route or you came here by mistake.
-            Whichever it is, try using the navigation
-          </Typography>
-          <Button
-            component={NextLink}
+function Error () {
+  
+      
+      return (
+  <div id='errorpage'>
+        <img id='errorimg' src="https://www.seekpng.com/png/detail/212-2123411_404-error-error-404.png" alt="404-error - Error 404@seekpng.com"/>
+        <div id='oops'>
+            <h1>Oops! You seem to be lost.</h1>
+        </div>
+          
+          <Button id='GoBack'
             href="/"
             startIcon={(
               <SvgIcon fontSize="small">
@@ -71,10 +25,7 @@ const Error = () => (
           >
             Go back to dashboard
           </Button>
-        </Box>
-      </Container>
-    </Box>
-  </>
-);
+  </div>
+)};
 
 export default Error;
