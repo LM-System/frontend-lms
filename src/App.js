@@ -1,12 +1,12 @@
 import './App.css';
-import JScourse from './componant/JScourse';
-import Courses from './componant/Courses';
+import JScourse from './component/JScourse';
+import Courses from './component/Courses';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LogInPage from './componant/LogInPage';
-import AboutUs from './componant/AboutUs';
+import LogInPage from './component/LogInPage';
+import AboutUs from './component/AboutUs';
 import { Route,Routes } from 'react-router-dom';
-// import Register from './componant/register';
-import Error from './componant/error.js';
+import Register from './component/register';
+import Error from './component/error.js';
 function App() {
   return (
     <>
@@ -15,7 +15,7 @@ function App() {
       <Route path='/login' element={<LogInPage/>}/>
       <Route path='/courses' element={<Courses/>}/> 
       <Route path='/aboutus' element={<AboutUs/>}/> 
-      {/* <Route path='/aboutus' element={<Register/>}/> */}
+      <Route path='/register' element={<Register/>}/>
       <Route path='*' element={<Error/>}/>
       <Route path='/JScourse' element={<JScourse/>}/> 
 
