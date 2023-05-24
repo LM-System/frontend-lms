@@ -1,0 +1,39 @@
+.rack-bar {
+  height: 20px;
+  width: 50px;
+  background-color: var(--dark-mode-color);
+  box-shadow: inset 0px 0px 5px 0px black;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.rack-bar.dark {
+  background-color: white;
+  box-shadow: inset 0px 0px 5px 0px var(--dark-mode-background);
+}
+.rack-circle {
+  height: 30px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  background-color: #fafafa;
+  color: 222;
+  border-radius: 50%;
+  left: 0px;
+  transition: 0.5s;
+  box-shadow: 0px 0px 2px 0px;
+}
+.rack-circle svg {
+  width: 75%
+}
+
+.rack-circle.dark {
+  background-color: var(--dark-mode-background);
+  left: calc(100% - 30px);
+  transform: rotate(360deg);
+  color: white;
+  transition: 0.5s;
+}
