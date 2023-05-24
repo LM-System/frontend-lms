@@ -1,9 +1,5 @@
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-
-
 .login-page-container {
-	background: #f6f5f7;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -11,6 +7,11 @@
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
   width: 100vw;
+	position: absolute;
+}
+
+form input {
+	border-radius: 5px;
 }
 
 form h1 {
@@ -42,9 +43,8 @@ form a {
 }
 
 form button, button.ghost {
+	border: 0;
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -53,7 +53,11 @@ form button, button.ghost {
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
 }
-
+form button {
+	background-color: var(--second-color-linear);
+	border: 1px solid var(--second-color-linear);
+	margin-top: 10px;
+}
 button:active {
 	transform: scale(0.95);
 }
@@ -64,7 +68,7 @@ button:focus {
 
 button.ghost {
 	background-color: transparent;
-	border-color: #FFFFFF;
+	border: 1px solid white;
   margin-top: 20px;
 }
 
@@ -158,9 +162,8 @@ form {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	/* background: #FF416C; */
+	background: var(--linear-gradient);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;

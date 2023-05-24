@@ -5,17 +5,17 @@ import Options from './Options/Options';
 
 export default function Sidebar(props) {
 
-  const [selectedOption, setSelectedOption] = useState(null)
   const sidebarOptions = [
     { id: 1, label: 'dashboard'},
     { id: 2, label: 'courses'},
     { id: 3, label: 'annoucments' },
     { id: 4, label: 'settings'},
   ];
+  
   return (
     <>
       <div className={`side-bar ${props.isSidebarVisible === true ? 'hidden' : ""} ${props.darkMode ? 'dark' : ""}`}>
-        <Link to={'/'} onClick={() => setSelectedOption(null)}>
+        <Link to={'/'} onClick={() => props.setSelectedOption(null)}>
         <div className='logo'>
           <img src={require("../assets/images/logo.png")} alt=''/>
           <span>LMS</span>
@@ -23,8 +23,8 @@ export default function Sidebar(props) {
         </Link>
         <Options
         sidebarOptions={sidebarOptions}
-        setSelectedOption={setSelectedOption}
-        selectedOption={selectedOption}
+        setSelectedOption={props.setSelectedOption}
+        selectedOption={props.selectedOption}
         darkMode={props.darkMode}/>
       </div>
     </>

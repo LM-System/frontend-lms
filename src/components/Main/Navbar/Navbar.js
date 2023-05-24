@@ -16,7 +16,7 @@ export default function Navbar(props) {
     className={`${!props.isSidebarVisible ? '' : 'full-width'} ${props.darkMode ? 'dark' : ''}`}
     >
       <div className={`nav-left ${props.darkMode ? 'dark' : ''}`}>
-        <MenuRoundedIcon onClick={() => props.setSidebarVisibility(prevState => !prevState)}/>
+        <MenuRoundedIcon onClick={() => props.sidebarToggle()}/>
         <div className='search-box'>
           <SearchRoundedIcon/><input type='search'/>
         </div>

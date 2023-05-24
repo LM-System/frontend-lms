@@ -5,11 +5,14 @@ export default function Main(props) {
   return (
     <main className={`${!props.isSidebarVisible ? '' : 'full-width'}`}>
       <Navbar
-        setSidebarVisibility={props.setSidebarVisibility}
+        sidebarToggle={props.sidebarToggle}
         isSidebarVisible={props.isSidebarVisible}
         darkMode={props.darkMode}
         darkModeToggle={props.darkModeToggle}/>
-      <Section isSidebarVisible={props.isSidebarVisible}/>
+      <Section
+        isSidebarVisible={props.isSidebarVisible}
+        sidebarOptions={props.sidebarOptions}
+        selectedOption={props.selectedOption}/>
     </main>
   )
 }

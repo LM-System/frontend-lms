@@ -21,12 +21,15 @@ export default function Options(props) {
     return newArr.join("")
   }
 
+  function toggleSelected(id) {
+    props.setSelectedOption(prevOption => id)
+  }
   const listElements = props.sidebarOptions.map((option) => (
     <li 
     onClick={() => toggleSelected(option.id)}
     key={option.id}
     className={`${option.id === props.selectedOption ? 'selected' : ''} ${props.darkMode ? 'dark' : ""} `}>
-      <Link to={`/${option.label}`}>
+      <Link>
         {icons[option.id]}
         <span>
           {`${firstLetterUpperCase(option.label)}`}
@@ -35,9 +38,6 @@ export default function Options(props) {
     </li>
   ))
 
-  function toggleSelected(id) {
-    props.setSelectedOption(prevOption => id)
-  }
   
   return (
   <ul className='side-bar-options'>
