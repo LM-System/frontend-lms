@@ -17,8 +17,7 @@ function App() {
   return (
     <div className='body-container'>
       <Routes>
-        {/* <Route path='*' element={<Error/>}/> */}
-        <Route path='*' element={
+        <Route path='/' element={
           <>
           <Sidebar
             isSidebarVisible={isSidebarVisible}
@@ -31,6 +30,7 @@ function App() {
             darkModeToggle={() => darkModeToggle()}/>
           </>
         }/>
+        <Route path='*' element={<Error/>}/>
       </Routes>
       
     </div>
