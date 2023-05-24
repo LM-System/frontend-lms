@@ -1,6 +1,5 @@
 import './Sidebar.css'
 import {Link} from 'react-router-dom';
-import {useState} from 'react'
 import Options from './Options/Options';
 
 export default function Sidebar(props) {
@@ -11,7 +10,7 @@ export default function Sidebar(props) {
     { id: 3, label: 'annoucments' },
     { id: 4, label: 'settings'},
   ];
-  
+
   return (
     <>
       <div className={`side-bar ${props.isSidebarVisible === true ? 'hidden' : ""} ${props.darkMode ? 'dark' : ""}`}>
