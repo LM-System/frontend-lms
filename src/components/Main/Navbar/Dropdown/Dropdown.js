@@ -13,7 +13,6 @@ export default function Dropdown(props) {
         <div><PersonRoundedIcon/> <span>Profile</span></div>
         <div
         onClick={() => {
-        props.setIsLogin(prevState => !prevState)
         navigate('/login')
       }}><LogoutRoundedIcon/> <span>Logout</span></div>
       </div>
