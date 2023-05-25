@@ -1,4 +1,5 @@
 import './App.css';
+
 import { useEffect, useState } from 'react';
 import Sidebar from './components/Sidebar/Sidebar';
 import Main from './components/Main/Main';
@@ -50,6 +51,7 @@ function App() {
             selectedOption={selectedOption}
             darkModeToggle={() => darkModeToggle()}/>
           </>
+          
         }/>
         <Route path='*' element={<Error/>}/>
       </Routes>
