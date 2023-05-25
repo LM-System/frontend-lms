@@ -15,12 +15,15 @@ section {
   }
 }
 @media (max-width: 575px) {
+  #section-id {
+    height: calc(100% - 78px) !important;
+  }
   section {
     width: 100%;
-    margin-left: 0;
-    height: calc(100% - 78px)
+    height: 100%;
   };
 }
+
 .full-width {
   width: 100%;
 }

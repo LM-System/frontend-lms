@@ -1,9 +1,13 @@
 main {
   flex-grow: 1;
+  position: relative;
 }
 
 @media (max-width: 575px) {
+  main.full-width  {
+    height: 100vh !important;
+  }
   main {
-    height: calc(100vh - 78px);
+    height: calc(100vh - 78px)
   }
 }

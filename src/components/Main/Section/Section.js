@@ -3,7 +3,7 @@ import MainContent from './MainContent/MainContent'
 
 export default function Section(props) {
   return (
-    <section className={`${!props.isSidebarVisible ? '' : 'full-width'}`}>
+    <section className={`${!props.isSidebarVisible ? '' : 'full-width'}`} id='section-id'>
       <div className='full-section'>
         <MainContent
           sidebarOptions={props.sidebarOptions}

@@ -58,6 +58,11 @@
     left: -250px;
   }
 }
+@media (max-width: 575px) {
+  .hidden {
+    bottom: -78px !important;
+  }
+}
 @media (max-width: 992px) {
   .logo span { 
     display: none; 
