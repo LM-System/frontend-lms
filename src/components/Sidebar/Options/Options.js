@@ -24,6 +24,7 @@ export default function Options(props) {
   function toggleSelected(id) {
     props.setSelectedOption(prevOption => id)
   }
+  
   const listElements = props.sidebarOptions.map((option) => (
     <li 
     onClick={() => toggleSelected(option.id)}

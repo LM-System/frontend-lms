@@ -5,7 +5,16 @@
   justify-content: flex-start;
   gap: 20px;
 }
-
+@media (max-width: 575px) {
+  .side-bar-options {
+    flex-flow: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .side-bar-options li a {
+    padding: 15px !important;
+  }
+}
 .side-bar-options li {
   list-style: none;
   border-radius: 10px;
@@ -22,6 +31,12 @@
   padding: 20px;
   color: var(--dark-mode-color);
   font-weight: 600;
+}
+
+@media (max-width: 575px) {
+  .side-bar-options li {
+    width: fit-content;
+  }
 }
 
 .side-bar-options li.dark a{

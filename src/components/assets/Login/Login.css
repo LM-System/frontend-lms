@@ -1,10 +1,9 @@
 .login-page-container {
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', sans-serif !important;
 	height: 100vh;
   width: 100vw;
 	position: absolute;
@@ -57,6 +56,11 @@ form button {
 	background-color: var(--second-color-linear);
 	border: 1px solid var(--second-color-linear);
 	margin-top: 10px;
+	transition: 0.5s;
+}
+form button:hover {
+	filter: contrast(130%);
+	transform: scale(1.05);
 }
 button:active {
 	transform: scale(0.95);
@@ -71,7 +75,10 @@ button.ghost {
 	border: 1px solid white;
   margin-top: 20px;
 }
-
+button.ghost:hover {
+	background-color: white;
+	color: var(--second-color-linear)
+}
 form {
 	background-color: #FFFFFF;
 	display: flex;

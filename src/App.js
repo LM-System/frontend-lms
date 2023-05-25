@@ -7,27 +7,24 @@ import Login from './components/assets/Login/Login';
 import {Routes, Route} from 'react-router-dom'
 
 function App() {
-  const [isSidebarVisible, setSidebarVisibility] = useState(
-    JSON.parse(localStorage.getItem('isSidebarVisible')) || false
-  )
-  const [darkMode, setDarkMode] = useState(
-    JSON.parse(localStorage.getItem('darkMode') || false)
-  )
   const [selectedOption, setSelectedOption] = useState(null)
 
+  const [isSidebarVisible, setSidebarVisibility] = useState(
+    JSON.parse(localStorage.getItem('isSidebarVisible')) || false)
   function sidebarToggle() {
     localStorage.setItem('isSidebarVisible', JSON.stringify(!isSidebarVisible))
     setSidebarVisibility(prevState => JSON.parse(localStorage.getItem('isSidebarVisible')))
   }
+  useEffect(() => {
+    setSidebarVisibility(prevState => JSON.parse(localStorage.getItem('isSidebarVisible')))
+  }, [isSidebarVisible])
+
+  const [darkMode, setDarkMode] = useState(
+    JSON.parse(localStorage.getItem('darkMode') || false))
   function darkModeToggle() {
     localStorage.setItem('darkMode', JSON.stringify(!darkMode))
     setDarkMode(prevState => JSON.parse(localStorage.getItem('darkMode')))
   }
-
-  useEffect(() => {
-    setSidebarVisibility(prevState => JSON.parse(localStorage.getItem('isSidebarVisible')))
-  }, [isSidebarVisible])
-  
   useEffect(() => {
     setDarkMode(prevState => JSON.parse(localStorage.getItem('darkMode')))
   }, [darkMode])
