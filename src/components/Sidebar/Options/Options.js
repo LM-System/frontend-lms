@@ -30,12 +30,10 @@ export default function Options(props) {
     onClick={() => toggleSelected(option.id)}
     key={option.id}
     className={`${option.id === props.selectedOption ? 'selected' : ''} ${props.darkMode ? 'dark' : ""} `}>
-      <Link>
         {icons[option.id]}
         <span>
           {`${firstLetterUpperCase(option.label)}`}
-          </span>
-      </Link>
+        </span>
     </li>
   ))
 
