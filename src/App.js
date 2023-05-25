@@ -1,4 +1,5 @@
 import './App.css';
+
 import { useEffect, useState } from 'react';
 import Sidebar from './components/Sidebar/Sidebar';
 import Main from './components/Main/Main';
@@ -52,6 +53,7 @@ function App() {
               darkModeToggle={() => darkModeToggle()}/>
               </> : <Navigate to='login'/>}
           </>
+          
         }/>
         <Route path='*' element={<Error/>}/>
       </Routes>
