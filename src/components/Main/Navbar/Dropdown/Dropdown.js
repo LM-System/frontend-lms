@@ -13,7 +13,8 @@ export default function Dropdown(props) {
         <div><PersonRoundedIcon/> <span>Profile</span></div>
         <div
         onClick={() => {
-        navigate('/login')
+          localStorage.removeItem('user_data')
+          navigate('/login')
       }}><LogoutRoundedIcon/> <span>Logout</span></div>
       </div>
   )

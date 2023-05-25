@@ -2,11 +2,36 @@ import './Login.css'
 import './Login.scss'
 import LoginBg from './LoginBg';
 import { useState } from 'react';
-import {Link} from 'react-router-dom'
-
+import {Link , useNavigate} from 'react-router-dom'
+import axios from 'axios'
 export default function Login() {
-
+	const navigate = useNavigate()
+	const [signInData, setSignInData] = useState(
+		{
+				email: "",
+				password: "",
+		}
+	)
+	function signInHandleChange(event) {
+		console.log(event.target.value)
+			const {name, value} = event.target
+			setSignInData(prevFormData => {
+					return {
+							...prevFormData,
+							[name]: value,
+					}
+			})
+	}
 	const [signUp, setSignUp] = useState(false)
+
+	async function signInHandler(event) {
+		event.preventDefault()
+		const result = await axios.post(`https://lms-f0bq.onrender.com/signin`, signInData)
+		if(result.data.message === 'success'){
+			localStorage.setItem('user_data', JSON.stringify(result.data.rows[0]))
+			navigate('/')
+		}
+	}
 
   return (
 		<>
@@ -24,10 +49,23 @@ export default function Login() {
 					</form>
 				</div>
 				<div className="form-container sign-in-container">
-					<form>
+					<form onSubmit={signInHandler}>
 						<h1>Sign in</h1>
-						<input type="email" placeholder="Email" />
-						<input type="password" placeholder="Password" />
+						<input
+							type="email"
+							placeholder="Email"
+							name='email'
+							value={signInData.email}
+							onChange={signInHandleChange}
+							/>
+						<input
+							type="password"
+							placeholder="Password"
+							name='password'
+							value={signInData.password}
+							onChange={signInHandleChange}
+							/>
+
 						<Link href="#">Forgot your password?</Link>
 						<button>Sign In</button>
 					</form>

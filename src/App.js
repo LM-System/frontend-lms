@@ -8,6 +8,9 @@ import {Routes, Route} from 'react-router-dom'
 
 function App() {
   const [selectedOption, setSelectedOption] = useState(null)
+  const [isLogin, setIsLogin] = useState(
+    localStorage.getItem('user_data') ? true : false
+  )
 
   const [isSidebarVisible, setSidebarVisibility] = useState(
     JSON.parse(localStorage.getItem('isSidebarVisible')) || false)

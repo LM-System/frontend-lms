@@ -21,10 +21,10 @@ export default function Sidebar(props) {
         </div>
         </Link>
         <Options
-        sidebarOptions={sidebarOptions}
-        setSelectedOption={props.setSelectedOption}
-        selectedOption={props.selectedOption}
-        darkMode={props.darkMode}/>
+          sidebarOptions={sidebarOptions}
+          setSelectedOption={props.setSelectedOption}
+          selectedOption={props.selectedOption}
+          darkMode={props.darkMode}/>
       </div>
     </>
   )
