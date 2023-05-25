@@ -32,7 +32,11 @@
   color: var(--dark-mode-color);
   font-weight: 600;
 }
-
+.side-bar-options li a:focus {
+  border-radius: 10px ;
+  outline: none;
+  box-shadow: none;
+}
 @media (max-width: 575px) {
   .side-bar-options li {
     width: fit-content;
