@@ -5,10 +5,15 @@ import CampaignIcon from '@mui/icons-material/Campaign';
 import SettingsIcon from '@mui/icons-material/Settings';
 import {Link} from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import ControlPanel from '../../assets/Admin/ControlPanel/ControlPanel';
+import GetUsers from '../../assets/Admin/GetUsers/GetUsers';
 
 export default function Options(props) {
   
-  const icons = {
+  const icons = props.role==="admin"?{
+    1: <ControlPanel/>,
+    2: <GetUsers/>,
+  }:{
     1: <DashboardIcon/>,
     2: <SchoolIcon/>,
     3: <CampaignIcon/>,
