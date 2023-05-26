@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Main from './components/Main/Main';
 import Error from './components/assets/Error/Error';
 import Login from './components/assets/Login/Login';
+import CoursePage from './components/Main/thisCourse/CoursePage';
 import {Routes, Route} from 'react-router-dom'
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           </>
           
         }/>
+        <Route path='/coursepage' element={<CoursePage/>}/>
         <Route path='*' element={<Error/>}/>
       </Routes>
       

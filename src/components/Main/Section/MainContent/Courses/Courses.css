@@ -1,28 +1,41 @@
 
+.cardBody{
+    background-color:#aa3864 ;
+    color:white;
+}
+.cardText,.cardTitle{
+    color: white;
+}
 .card:hover .cardImage{
     display: none;
     
 }
+.card:hover{
+    pointer-events:visiblePainted;
+}
 .card:hover .cardBody{
     padding:30px;
-    background-image: url(https://www.classcentral.com/report/wp-content/uploads/2022/06/JavaScript-BCG-Banner-icons.png);
+    background-color: #643781;
+    /* background-image: url(https://www.classcentral.com/report/wp-content/uploads/2022/06/JavaScript-BCG-Banner-icons.png); */
     /* background-position: center; */
     background-size:cover;
     font: bold;
 }
 .card:hover .cardTitle{
-    background-color: #fff0d6;
+    background-color: #aa3864;
     padding: 10px;
-    border: 1px solid #ffb74d;
+    border: 1px solid #643781;
     border-radius: 12px;
+    color: white;
 }
 .card:hover .cardText{
     
     display: block;
     padding: 10px;
-    border: 1px solid #ffb74d;
-    background-color: #fff0d6;
+    border: 1px solid #643781;
+    background-color: #aa3864;
     border-radius: 12px;
+    color: white;
 
 }
 
