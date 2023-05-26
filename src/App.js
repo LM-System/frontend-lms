@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Main from './components/Main/Main';
 import Error from './components/assets/Error/Error';
 import Login from './components/assets/Login/Login';
+import Loading from './components/assets/Loading/Loading';
 import {Routes, Route, Navigate} from 'react-router-dom'
 
 function App() {
@@ -31,11 +32,11 @@ function App() {
   useEffect(() => {
     setDarkMode(prevState => JSON.parse(localStorage.getItem('darkMode')))
   }, [darkMode])
-
+  
   return (
     <div className='body-container'>
       <Routes>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/login' element={<Login setIsLogin={setIsLogin}/>}/>
         <Route path='/' element={
           <>
             { isLogin ? <>
@@ -49,7 +50,8 @@ function App() {
               sidebarToggle={sidebarToggle}
               darkMode={darkMode}
               selectedOption={selectedOption}
-              darkModeToggle={() => darkModeToggle()}/>
+              darkModeToggle={() => darkModeToggle()}
+              setIsLogin={setIsLogin}/>
               </> : <Navigate to='login'/>}
           </>
         }/>
