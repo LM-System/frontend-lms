@@ -30,7 +30,7 @@ export default function Navbar(props) {
           <ArrowDropDownRoundedIcon onClick={() => setDropDown(prevState => !prevState)}/>
         </div>
       </div>
-      <Dropdown dropDown={dropDown} setDropDown={setDropDown}/>
+      <Dropdown dropDown={dropDown} setDropDown={setDropDown} setIsLogin={props.setIsLogin}/>
     </nav>
   )
 }

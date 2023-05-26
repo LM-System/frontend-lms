@@ -4,7 +4,8 @@ import LoginBg from './LoginBg';
 import { useState } from 'react';
 import {Link , useNavigate} from 'react-router-dom'
 import axios from 'axios'
-export default function Login() {
+
+export default function Login(props) {
 	const navigate = useNavigate()
 	const [signInData, setSignInData] = useState(
 		{
@@ -24,13 +25,19 @@ export default function Login() {
 	}
 	const [signUp, setSignUp] = useState(false)
 
-	async function signInHandler(event) {
+	function signInHandler(event) {
 		event.preventDefault()
-		const result = await axios.post(`https://lms-f0bq.onrender.com/signin`, signInData)
-		if(result.data.message === 'success'){
-			localStorage.setItem('user_data', JSON.stringify(result.data.rows[0]))
-			navigate('/')
-		}
+		axios.post(`${process.env.REACT_APP_SERVER_URL}signin`, signInData).then(result => {
+			if(result.data.message === 'success'){
+				props.setIsLogin(true)
+				localStorage.setItem('user_data', JSON.stringify(result.data.rows[0]))
+				const user = JSON.parse(localStorage.getItem('user_data'))
+				const body = { status: "on"}
+				axios.put(`${process.env.REACT_APP_SERVER_URL}updatestatues/${user.id}`, body)
+				.then(userData => localStorage.setItem('user_data', JSON.stringify(userData.data[0])))
+				navigate('/')
+			}
+		})
 	}
 
   return (
@@ -65,7 +72,6 @@ export default function Login() {
 							value={signInData.password}
 							onChange={signInHandleChange}
 							/>
-
 						<Link href="#">Forgot your password?</Link>
 						<button>Sign In</button>
 					</form>
