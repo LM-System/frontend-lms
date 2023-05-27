@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import ThisCourse from '../../../thisCourse/thisCourse';
 import { useEffect,useState } from "react"
-export default function Courses() {
+export default function Courses(props) {
   const [showCourses,setShowCourses]= useState([]) 
   const showResult = async ()=>{
   const localStor = localStorage.getItem('user_data')
@@ -38,7 +38,7 @@ const handleclose = () => {
     <>
     <Row xs={2} md={3} className="g-4">
       {showCourses.map((item, idx) => (
-        <Col key={idx}>
+        <Col className='wholecard' key={idx}>
           <Card onClick={()=>{sendThisCourse(item)}} className='card'>
             <Card.Img className='cardImage' variant="top" src="https://www.classcentral.com/report/wp-content/uploads/2022/06/JavaScript-BCG-Banner-icons.png" />
             <Card.Body className="cardBody">
@@ -211,6 +211,6 @@ const handleclose = () => {
           </Card>
         </Col>
     </Row>
-    <ThisCourse showFlag={show} handleclose={handleclose} thisCourseData={clickedCourse} fullscreen={fullscreen}/>
+    <ThisCourse darkMode={props.darkMode} showFlag={show} handleclose={handleclose} thisCourseData={clickedCourse} fullscreen={fullscreen}/>
     </>
   )}

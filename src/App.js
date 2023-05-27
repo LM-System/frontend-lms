@@ -57,7 +57,6 @@ function App() {
           </>
           
         }/>
-        <Route path='/coursepage' element={<CoursePage/>}/>
         <Route path='*' element={<Error/>}/>
       </Routes>
     </div>

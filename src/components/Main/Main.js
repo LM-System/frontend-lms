@@ -13,7 +13,8 @@ export default function Main(props) {
       <Section
         isSidebarVisible={props.isSidebarVisible}
         sidebarOptions={props.sidebarOptions}
-        selectedOption={props.selectedOption}/>
+        selectedOption={props.selectedOption}
+        darkMode={props.darkMode}/>
     </main>
   )
 }

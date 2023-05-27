@@ -1,7 +1,9 @@
 
+
 .cardBody{
-    background-color:#aa3864 ;
+    background-image:var(--linear-gradient) ;
     color:white;
+    /* border: 1px solid black; */
 }
 .cardText,.cardTitle{
     color: white;
@@ -18,7 +20,7 @@
     background-color: #643781;
     /* background-image: url(https://www.classcentral.com/report/wp-content/uploads/2022/06/JavaScript-BCG-Banner-icons.png); */
     /* background-position: center; */
-    background-size:cover;
+    /* background-size:cover; */
     font: bold;
 }
 .card:hover .cardTitle{
@@ -27,6 +29,7 @@
     border: 1px solid #643781;
     border-radius: 12px;
     color: white;
+    
 }
 .card:hover .cardText{
     
@@ -36,6 +39,7 @@
     background-color: #aa3864;
     border-radius: 12px;
     color: white;
+   
 
 }
 

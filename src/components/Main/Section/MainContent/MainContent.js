@@ -1,3 +1,4 @@
+import './MainContent.css'
 import Dashboard from './Dashboard/Dashboard'
 import Courses from './Courses/Courses'
 import Announcements from './Annoucments/Announcments'
@@ -13,13 +14,13 @@ export default function MainContent(props) {
     2: <GetUsers/>,
   }: {
     1: <Dashboard/>,
-    2: <Courses/>,
+    2: <Courses darkMode={props.darkMode}/>,
     3: <Announcements/>,
     4: <Settings/>
   }
   return(
-    <>
+    <div className='mainContent'>
       {mainOption[props.selectedOption]}
-    </>
+    </div>
   )
 }
