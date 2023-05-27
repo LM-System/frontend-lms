@@ -5,10 +5,15 @@ import CampaignIcon from '@mui/icons-material/Campaign';
 import SettingsIcon from '@mui/icons-material/Settings';
 import {Link} from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import ControlPanel from '../../assets/Admin/ControlPanel/ControlPanel';
+import GetUsers from '../../assets/Admin/GetUsers/GetUsers';
 
 export default function Options(props) {
   
-  const icons = {
+  const icons = props.role==="admin"?{
+    1: <ControlPanel/>,
+    2: <GetUsers/>,
+  }:{
     1: <DashboardIcon/>,
     2: <SchoolIcon/>,
     3: <CampaignIcon/>,
@@ -30,12 +35,10 @@ export default function Options(props) {
     onClick={() => toggleSelected(option.id)}
     key={option.id}
     className={`${option.id === props.selectedOption ? 'selected' : ''} ${props.darkMode ? 'dark' : ""} `}>
-      <Link>
         {icons[option.id]}
         <span>
           {`${firstLetterUpperCase(option.label)}`}
-          </span>
-      </Link>
+        </span>
     </li>
   ))
 
