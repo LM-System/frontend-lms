@@ -1,11 +1,17 @@
 import './Login.css'
 import './Login.scss'
 import LoginBg from './LoginBg';
+import Loading from '../Loading/Loading';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { useState } from 'react';
 import {Link , useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 export default function Login(props) {
+	const [signUp, setSignUp] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
+	const [isInvalid, setIsInvalid] = useState(false)
+	//SignIn functions
 	const navigate = useNavigate()
 	const [signInData, setSignInData] = useState(
 		{
@@ -23,10 +29,11 @@ export default function Login(props) {
 					}
 			})
 	}
-	const [signUp, setSignUp] = useState(false)
-
+	
 	function signInHandler(event) {
 		event.preventDefault()
+		setIsInvalid(false)
+		setIsLoading(true)
 		axios.post(`${process.env.REACT_APP_SERVER_URL}signin`, signInData).then(result => {
 			if(result.data.message === 'success'){
 				props.setIsLogin(true)
@@ -36,6 +43,10 @@ export default function Login(props) {
 				axios.put(`${process.env.REACT_APP_SERVER_URL}updatestatues/${user.id}`, body)
 				.then(userData => localStorage.setItem('user_data', JSON.stringify(userData.data[0])))
 				navigate('/')
+				setIsLoading(false)
+			} else if(result.data.message === 'failed') {
+				setIsLoading(false)
+				setIsInvalid(true)
 			}
 		})
 	}
@@ -57,8 +68,14 @@ export default function Login(props) {
 				</div>
 				<div className="form-container sign-in-container">
 					<form onSubmit={signInHandler}>
+						{/* Invalid PopUp Message */}
+					<div className={`pop-message ${isInvalid ? "invalid" : ""}`}>
+						<span>Invalid email/password</span>
+						{/* <button className='close-button'><CloseRoundedIcon/></button> */}
+					</div>
 						<h1>Sign in</h1>
 						<input
+							className={isInvalid ? "invalid" : ""}
 							type="email"
 							placeholder="Email"
 							name='email'
@@ -66,6 +83,7 @@ export default function Login(props) {
 							onChange={signInHandleChange}
 							/>
 						<input
+							className={isInvalid ? "invalid" : ""}	
 							type="password"
 							placeholder="Password"
 							name='password'
@@ -73,7 +91,7 @@ export default function Login(props) {
 							onChange={signInHandleChange}
 							/>
 						<Link href="#">Forgot your password?</Link>
-						<button>Sign In</button>
+						<button className={isLoading ? "loading" : ""}>{isLoading ? <Loading/> : "Sign In"}</button>
 					</form>
 				</div>
 				<div className="overlay-container">
