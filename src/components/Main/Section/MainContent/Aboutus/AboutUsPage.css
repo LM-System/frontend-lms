@@ -100,7 +100,7 @@ body {
   right: 0;
   bottom: 0;
   border: 8px solid;
-  border-image: linear-gradient(to top, #42378f, #f53844) 1;
+  border-image: linear-gradient(to top, #42378f, #f53844) ;
   border-image-slice: 1;
   pointer-events: none;
   border-radius: 10%; /* Add rounded corners */
