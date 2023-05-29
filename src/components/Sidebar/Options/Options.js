@@ -1,11 +1,9 @@
 import './Options.css'
-import DashboardIcon from '@mui/icons-material/Dashboard';
+// import DashboardIcon from '@mui/icons-material/Dashboard';
 import SchoolIcon from '@mui/icons-material/School';
 import CampaignIcon from '@mui/icons-material/Campaign';
-import SettingsIcon from '@mui/icons-material/Settings';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import {Link} from 'react-router-dom'
-import { useState, useEffect } from 'react'
+
 
 export default function Options(props) {
   

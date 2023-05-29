@@ -99,9 +99,6 @@
 .change-password span:hover {
   cursor: pointer;
 }
-.change-password .details {
-  
-}
 .change-password-button {
   display: inline;
 }
