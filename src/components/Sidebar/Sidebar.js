@@ -9,9 +9,9 @@ export default function Sidebar(props) {
     role === "admin"
       ? [
           { id: 1, label: "Control Panel" },
-          { id: 2, label: "Users" },
-          { id: 3, label: "About" },
-          { id: 4, label: "Course Control Panel" },
+          { id: 2, label: "Course Control Panel" },
+          { id: 3, label: "Users" },
+          { id: 4, label: "About" },
         ]
       : [
           { id: 1, label: "dashboard" },

@@ -47,10 +47,15 @@ table{
     .crud >div{
         margin-top: 1rem;
     }
-
+    table .plus_th{
+        width:20px;
+    }
     .crud-button{
         margin-top: 2rem;
         padding: 12px 24px;
+    }
+    .cursor{
+        cursor: pointer;
     }
     @media (max-width:575px) {
         .crud{

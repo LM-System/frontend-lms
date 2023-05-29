@@ -8,13 +8,15 @@ import { useState, useEffect } from "react";
 import AdminPanelSettingsRoundedIcon from "@mui/icons-material/AdminPanelSettingsRounded";
 import PeopleRoundedIcon from "@mui/icons-material/PeopleRounded";
 import InfoIcon from "@mui/icons-material/Info";
+import AddToPhotosIcon from '@mui/icons-material/AddToPhotos';
 export default function Options(props) {
   const icons =
     props.role === "admin"
       ? {
           1: <AdminPanelSettingsRoundedIcon />,
-          2: <PeopleRoundedIcon />,
-          3: <InfoIcon />,
+          2:  <AddToPhotosIcon/>,
+          3: <PeopleRoundedIcon />,
+          4: <InfoIcon />,
         }
       : {
           1: <DashboardIcon />,

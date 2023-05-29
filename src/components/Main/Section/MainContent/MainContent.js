@@ -14,9 +14,9 @@ export default function MainContent(props) {
     role === "admin"
       ? {
           1: <ControlPanel />,
-          2: <GetUsers />,
-          3: <AboutUsPage />,
-          4: <CourseControlPanel/>,
+          2: <CourseControlPanel/>,
+          3: <GetUsers />,
+          4: <AboutUsPage />,
         }
       : {
           1: <Dashboard />,

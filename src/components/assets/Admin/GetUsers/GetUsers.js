@@ -30,7 +30,7 @@ return (
 {
 usersData.map((item,index)=>
 <tr className={index % 2=== 0?"light-white-table":"white-table"} key={index}>
-       <td >{index+1}</td>
+       <td >{item.id}</td>
        <td>{item.fname}</td>
        <td>{item.lname}</td>
        <td>{item.role}</td>
