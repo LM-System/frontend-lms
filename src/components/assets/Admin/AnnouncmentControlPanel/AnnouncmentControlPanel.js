@@ -62,6 +62,7 @@ export default function AnnouncmentControlPanel(props) {
      {addIsClicked && <button 
         onClick={async()=>{ 
           setShowForm(false)
+          setAddIsClicked(false)
           const serverUrl = `${process.env.REACT_APP_SERVER_URL}addanouncment`;
           const result = await axios.post(serverUrl,announcmentContent);
        }} className='update-button crud-button'>send</button>}
@@ -86,6 +87,7 @@ export default function AnnouncmentControlPanel(props) {
             }
             )
             setShowForm(false)
+            setAddIsClicked(false)
          }}>cancel </button>
          <p></p>
          </div>}
@@ -107,7 +109,7 @@ export default function AnnouncmentControlPanel(props) {
        <th>announcment title</th>
        <th>announcment body</th>
        <th>Update</th>
-       <th>Delete &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <AddCircleOutlineIcon className='cursor' onClick={()=>{
+       <th>Delete &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <AddCircleOutlineIcon className='cursor' onClick={()=>{
           setAddIsClicked(true)
           setShowForm(true)
           console.log(addIsClicked)

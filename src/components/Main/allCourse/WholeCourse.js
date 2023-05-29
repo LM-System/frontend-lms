@@ -65,6 +65,8 @@ console.log(selectedNavOption)
 
         <p></p>
         <Image className='modalImage' src="https://www.classcentral.com/report/wp-content/uploads/2022/06/JavaScript-BCG-Banner-icons.png" rounded width='100%' />
+        
+        {/* <Image className='modalImage' src="https://trisectinstitute.com/wp-content/uploads/2021/12/best-python-training.png" rounded width='100%' /> */}
         <p></p>
        
         {navSectionContents[selectedNavOption || 0]}
