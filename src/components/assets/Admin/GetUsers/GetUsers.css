@@ -1,8 +1,8 @@
-table{
+.GetUsersTable{
     min-width:100% ;
     border-spacing: 0px;
     }
-    table th {
+    .GetUsersTable th {
         background-color: #f53844;
         padding: 15px;
         text-align: left;
@@ -10,30 +10,19 @@ table{
         font-weight: bold;
     
     }
-    table td {
+    .GetUsersTable td {
         padding: 15px;
         width: calc(100% / 7);
     }
-    .light-white-table{
+    .GetUsersTablelight{
         background-color: #f2f2f2;
     }
-    .white-table{
+    .GetUsersTablewhite{
         background-color: #fff;
     }
-    td button{
-        padding: 6px 12px;
-        border-radius: 10px;
-        color: #f2f2f2;
-    
+    .GetUsersTablelight{
+        color: black !important;
     }
-    .update-button{
-    background-color:#ffc107 ;
-    border: 0.8px solid #ffc107;
-    color: #2f2f2f;
-    
-    }
-    .delete-button{
-        background-color:#f53844 ;
-        border: 0.8px solid #f53844;
-    
+    .GetUsersTablelight td, .GetUsersTablewhite td{
+        color: #2f2f2f;
     }

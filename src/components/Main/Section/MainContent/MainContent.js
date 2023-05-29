@@ -12,9 +12,9 @@ export default function MainContent(props) {
   const mainOption =
     role === "admin"
       ? {
-          1: <ControlPanel />,
-          2: <CourseControlPanel/>,
-          3: <GetUsers />,
+          1: <ControlPanel {...props}/>,
+          2: <CourseControlPanel {...props}/>,
+          3: <GetUsers {...props}/>,
         }
       : {
     1: <Courses {...props}/>,
