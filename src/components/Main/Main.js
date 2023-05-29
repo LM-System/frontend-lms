@@ -9,8 +9,10 @@ export default function Main(props) {
         isSidebarVisible={props.isSidebarVisible}
         darkMode={props.darkMode}
         darkModeToggle={props.darkModeToggle}
-        setIsLogin={props.setIsLogin}/>
+        setIsLogin={props.setIsLogin}
+        setSelectedOption={props.setSelectedOption}/>
       <Section
+        darkMode={props.darkMode}
         isSidebarVisible={props.isSidebarVisible}
         sidebarOptions={props.sidebarOptions}
         selectedOption={props.selectedOption}/>

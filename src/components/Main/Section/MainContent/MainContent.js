@@ -1,29 +1,18 @@
-import Dashboard from "./Dashboard/Dashboard";
-import Courses from "./Courses/Courses";
-import Announcements from "./Annoucments/Announcments";
-import Settings from "./Settings/Settings";
-import ControlPanel from "../../../assets/Admin/ControlPanel/ControlPanel";
-import GetUsers from "../../../assets/Admin/GetUsers/GetUsers";
-import AboutUsPage from "./Aboutus/AboutUsPage";
-import CourseControlPanel from "../../../assets/Admin/CourseControlPanel/CourseControlPanel";
+import Courses from './Courses/Courses'
+import Announcements from './Annoucments/Announcments'
+import Profile from './Profile/Profile'
+import Aboutus from './Aboutus/Aboutus'
 
 export default function MainContent(props) {
-  let role = JSON.parse(localStorage.getItem("user_data")).role;
-
-  const mainOption =
-    role === "admin"
-      ? {
-          1: <ControlPanel />,
-          2: <GetUsers />,
-          3: <AboutUsPage />,
-          4: <CourseControlPanel/>,
-        }
-      : {
-          1: <Dashboard />,
-          2: <Courses />,
-          3: <Announcements />,
-          4: <Settings />,
-          5: <AboutUsPage />,
-        };
-  return <>{mainOption[props.selectedOption]}</>;
+  const mainOption = {
+    1: <Courses {...props}/>,
+    2: <Announcements {...props}/>,
+    3: <Profile {...props}/>,
+    4: <Aboutus {...props}/>,
+  }
+  return(
+    <>
+      {mainOption[props.selectedOption]}
+    </>
+  )
 }

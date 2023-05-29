@@ -33,6 +33,13 @@ section {
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
+.full-section > div {
+  
+}
+section.dark{
+  background-color: var(--dark-mode-color);
+  color: white;
+}
 
 .full-section::-webkit-scrollbar {
   width: 10px;

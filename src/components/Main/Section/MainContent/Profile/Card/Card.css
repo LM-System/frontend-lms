@@ -1,0 +1,132 @@
+.user-card{
+  background-color: white;
+  color: var(--dark-mode-color);
+  transition: 0.5s;
+  box-shadow: 0 0 6px -5px black;
+  padding: 20px;
+  align-self: flex-start;
+  border-radius: 10px;
+  width: 100%;
+  min-width: 300px;
+  max-width: 500px;
+}
+.user-card img {
+  border-radius: 50%;
+}
+.user-card.dark{
+  background-color: var(--dark-mode-background);
+  color: white;
+  transition: 0.5s;
+}
+.user-card {
+  color: var(--dark-mode-color);
+}
+.user-card p {
+  color: #999
+}
+.bio {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.bio svg {
+  color: #99999940;
+}
+.bio svg:hover {
+  cursor: pointer;
+  color: var(--dark-mode-color);
+}
+.bio.dark svg:hover {
+  color: white;
+}
+.bio p{
+  color: black;
+}
+.bio-text {
+  margin: 10px 0px;
+  overflow-wrap: break-word;
+}
+.textarea-container {
+  display: flex;
+}
+textarea {
+  margin: 10px 0px;
+  width: 100%;
+  min-height: 300px;
+  max-height: fit-content;
+  border-radius: 5px;
+  background-color: #99999910;
+  border: 0;
+  font-size: 1em;
+  resize: none;
+  padding: 10px;
+  outline: 0;
+  color: var(--dark-mode-color);
+  cursor: unset;
+}
+textarea.dark {
+  color: white;
+}
+textarea:hover {
+  outline: 1px solid var(--first-color-linear);
+}
+.editable {
+  background-color: #99999910;
+  min-height: 300px;
+}
+.editable:focus {
+  outline: 1px solid var(--first-color-linear);
+}
+
+textarea::-webkit-scrollbar {
+  width: 5px;
+  margin-left: 10px;
+  cursor: pointer !important;
+}
+
+textarea::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to top, #42378f, #f53844);
+  border-radius: 5px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(to top, #392f7b, #9d222b);
+  cursor: pointer !important;
+}
+
+
+
+.card-buttons-container {
+  display: flex;
+  flex-flow: row !important;
+  justify-content: flex-end;
+  gap: 10px
+}
+.card-buttons-container button {
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  transition: 0.5s;
+  min-width: 60px;
+}
+.card-buttons-container button:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+.card-buttons-container button:first-child {
+  background-color: #1fae51;
+}
+.card-buttons-container button:last-child {
+  background-color: gray;
+}
+@media (max-width: 768px) {
+  .user-card { align-self: center; }
+}
