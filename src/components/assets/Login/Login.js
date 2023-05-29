@@ -70,7 +70,6 @@ export default function Login(props) {
 						{/* Invalid PopUp Message */}
 					<div className={`pop-message ${isInvalid ? "invalid" : ""}`}>
 						<span>Invalid email/password</span>
-						{/* <button className='close-button'><CloseRoundedIcon/></button> */}
 					</div>
 						<h1>Sign in</h1>
 						<input

@@ -1,6 +1,6 @@
-import './Sidebar.css'
-import {Link} from 'react-router-dom';
-import Options from './Options/Options';
+import "./Sidebar.css";
+import { Link } from "react-router-dom";
+import Options from "./Options/Options";
 
 export default function Sidebar(props) {
 
@@ -24,8 +24,9 @@ export default function Sidebar(props) {
           sidebarOptions={sidebarOptions}
           setSelectedOption={props.setSelectedOption}
           selectedOption={props.selectedOption}
-          darkMode={props.darkMode}/>
+          darkMode={props.darkMode}
+        />
       </div>
     </>
-  )
+  );
 }
