@@ -1,13 +1,13 @@
-import "./Options.css";
-import DashboardIcon from "@mui/icons-material/Dashboard";
+import './Options.css'
 import SchoolIcon from "@mui/icons-material/School";
 import CampaignIcon from "@mui/icons-material/Campaign";
-import SettingsIcon from "@mui/icons-material/Settings";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import AdminPanelSettingsRoundedIcon from "@mui/icons-material/AdminPanelSettingsRounded";
 import PeopleRoundedIcon from "@mui/icons-material/PeopleRounded";
 import InfoIcon from "@mui/icons-material/Info";
+import AddToPhotosIcon from '@mui/icons-material/AddToPhotos';
+import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
+
 export default function Options(props) {
   const icons =
     props.role === "admin"
@@ -19,12 +19,11 @@ export default function Options(props) {
           5: <InfoIcon />,
         }
       : {
-          1: <DashboardIcon />,
-          2: <SchoolIcon />,
-          3: <CampaignIcon />,
-          4: <SettingsIcon />,
-          5: <InfoIcon />,
-        };
+        1: <SchoolIcon/>,
+        2: <CampaignIcon/>,
+        3: <PersonRoundedIcon/>,
+        4: <InfoRoundedIcon/>,
+      };
 
   function firstLetterUpperCase(str) {
     let newArr = str.split("");
@@ -33,7 +32,8 @@ export default function Options(props) {
   }
 
   function toggleSelected(id) {
-    props.setSelectedOption((prevOption) => id);
+    sessionStorage.setItem('selectedOption', JSON.stringify(id))
+    props.setSelectedOption(prevOption => id)
   }
 
   const listElements = props.sidebarOptions.map((option) => (

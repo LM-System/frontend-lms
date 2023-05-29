@@ -11,10 +11,14 @@ const [userData,setUserData]=useState([])
 const [course,setCourse]=useState({})
 const [userId,setUserId]=useState("")
 const [isAdd,setIsAdd]=useState(false)
+const [isStartLabel,setIsStartLabel]=useState(false)
+const [isEndLabel,setIsEndLabel]=useState(false)
 const [courseInfo,setcourseInfo]=useState({
   title:"",
   descreption:"",
   role:"",
+  start_date:"",
+  end_date:""
 })
 
 function LabelChange(event) {
@@ -41,7 +45,10 @@ useEffect(()=>{
   <h2>Courses Control Panel</h2>
   <TextField fullWidth label="Course Title"  onChange={LabelChange} name='title' id="fullWidth" />
   <TextField fullWidth label="Course Descreption"  onChange={LabelChange} name='descreption' id="fullWidth" />
+  <TextField fullWidth label={isStartLabel} type='date' onFocus={()=>setIsStartLabel("Start Date")} onBlur={()=>setIsStartLabel("")} onChange={LabelChange} name='start_date' id="fullWidth" />
+  <TextField fullWidth label={isEndLabel} type='date' onFocus={()=>setIsEndLabel("End Date")} onBlur={()=>setIsEndLabel("")} onChange={LabelChange} name=' end_date' id="fullWidth" />
   <TextField fullWidth label="Users Role" value={courseInfo.role} onChange={LabelChange} name='role' id="fullWidth" />
+
   <button className='update-button crud-button' onClick={ async()=>{
             const ItemRole=course.role;
             console.log(ItemRole);

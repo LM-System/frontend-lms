@@ -1,49 +1,15 @@
-.canvas {
-  align-items: center;
-  background: #eeeeee;
+.loader {
+  position: relative;
+  margin: auto;
+  border: 5px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-  display: flex;
-  height: 10em;
-  justify-content: center;
-  margin: 1em 1em 2em 1em;
-  width: 10em;
+  border-top: 5px solid rgba(255, 255, 255, 0.5);
+  width: 25px;
+  height: 25px;
+  animation: spinner 1.5s linear infinite;
 }
 
-/* Spinner 1 starts here */
-.spinner1 {
-  align-items: center;
-  border: .3em solid transparent;
-  border-top: .3em solid #4DB6AC;
-  border-right: .3em solid #4DB6AC;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.spinnerMax {
-  animation: spinnerOne 3s linear infinite;
-  height: 3em;
-  width: 3em;
-}
-
-.spinnerMid {
-  animation: spinnerOne 5s linear infinite;
-  height: 2.4em;
-  width: 2.4em;
-}
-
-.spinnerMin {
-  animation: spinnerOne 5s linear infinite;
-  height: 1.8em;
-  width: 1.8em;
-}
-
-@keyframes spinnerOne {
-  0% {
-    transform: rotate(0deg)
-  }
-  100% {
-    transform: rotate(360deg)
-  }
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

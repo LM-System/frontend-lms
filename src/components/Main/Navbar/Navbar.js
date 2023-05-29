@@ -25,12 +25,16 @@ export default function Navbar(props) {
       <div className={`nav-right ${props.darkMode ? 'dark' : ''}`}>
         <SwitchButton darkMode={props.darkMode} darkModeToggle={props.darkModeToggle}/>
         <NotificationsRoundedIcon/>
-        <div className='profile-container'>
+        <div className='profile-box'>
           <AccountCircle/>
           <ArrowDropDownRoundedIcon onClick={() => setDropDown(prevState => !prevState)}/>
         </div>
       </div>
-      <Dropdown dropDown={dropDown} setDropDown={setDropDown} setIsLogin={props.setIsLogin}/>
+      <Dropdown
+        dropDown={dropDown}
+        setDropDown={setDropDown}
+        setIsLogin={props.setIsLogin}
+        setSelectedOption={props.setSelectedOption}/>
     </nav>
   )
 }

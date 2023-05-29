@@ -1,74 +1,16 @@
 import './Login.css'
 import './Login.scss'
 import LoginBg from './LoginBg';
+import Loading from '../Loading/Loading';
 import { useState } from 'react';
 import {Link , useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 export default function Login(props) {
-const malek=
-{
-	courses:[
-		{
-			title:"Life Skills",
-			description:"",
-			image_path:"",
-			start_date:"22-5-2022",			
-			end_date:"22-5-2022",
-			level:"",
-			
-		},
-		{
-			title:"JavaScript fundementals",
-			description:"",
-			image_path:"",
-			start_date:"22-5-2022",			
-			end_date:"22-5-2022",			
-			level:"",
-
-		}
-		,
-		{
-			title:"Web Design / HTML && CSS",
-			description:"",
-			image_path:"",
-			start_date:"22-5-2022",			
-			end_date:"22-5-2022",			
-			level:"",
-
-		}
-		,
-		{
-			title:"English L1",
-			description:"",
-			image_path:"",
-			start_date:"22-5-2022",			
-			end_date:"22-5-2022",			
-			level:"",
-
-		},
-		{
-			title:"English L2",
-			description:"",
-			image_path:"",
-			start_date:"22-5-2022",			
-			end_date:"22-5-2022",			
-			level:"",
-
-		}
-		,
-		{
-			title:"Career",
-			description:"",
-			image_path:"",
-			start_date:"22-5-2022",			
-			end_date:"22-5-2022",			
-			level:"",
-
-		}
-	]
-}
-
+	const [signUp, setSignUp] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
+	const [isInvalid, setIsInvalid] = useState(false)
+	//SignIn functions
 	const navigate = useNavigate()
 	const [signInData, setSignInData] = useState(
 		{
@@ -86,19 +28,24 @@ const malek=
 					}
 			})
 	}
-	const [signUp, setSignUp] = useState(false)
-
+	
 	function signInHandler(event) {
 		event.preventDefault()
+		setIsInvalid(false)
+		setIsLoading(true)
 		axios.post(`${process.env.REACT_APP_SERVER_URL}signin`, signInData).then(result => {
 			if(result.data.message === 'success'){
 				props.setIsLogin(true)
 				localStorage.setItem('user_data', JSON.stringify(result.data.rows[0]))
 				const user = JSON.parse(localStorage.getItem('user_data'))
-				const body = { status: "on"}
-				axios.put(`${process.env.REACT_APP_SERVER_URL}updatestatues/${user.id}`, body)
+				const body = { ...user, status: "on"}
+				axios.put(`${process.env.REACT_APP_SERVER_URL}userinformtion/${user.id}`, body)
 				.then(userData => localStorage.setItem('user_data', JSON.stringify(userData.data[0])))
 				navigate('/')
+				setIsLoading(false)
+			} else if(result.data.message === 'failed') {
+				setIsLoading(false)
+				setIsInvalid(true)
 			}
 		})
 	}
@@ -120,8 +67,13 @@ const malek=
 				</div>
 				<div className="form-container sign-in-container">
 					<form onSubmit={signInHandler}>
+						{/* Invalid PopUp Message */}
+					<div className={`pop-message ${isInvalid ? "invalid" : ""}`}>
+						<span>Invalid email/password</span>
+					</div>
 						<h1>Sign in</h1>
 						<input
+							className={isInvalid ? "invalid" : ""}
 							type="email"
 							placeholder="Email"
 							name='email'
@@ -129,6 +81,7 @@ const malek=
 							onChange={signInHandleChange}
 							/>
 						<input
+							className={isInvalid ? "invalid" : ""}	
 							type="password"
 							placeholder="Password"
 							name='password'
@@ -136,7 +89,7 @@ const malek=
 							onChange={signInHandleChange}
 							/>
 						<Link href="#">Forgot your password?</Link>
-						<button>Sign In</button>
+						<button className={isLoading ? "loading" : ""}>{isLoading ? <Loading/> : "Sign In"}</button>
 					</form>
 				</div>
 				<div className="overlay-container">
