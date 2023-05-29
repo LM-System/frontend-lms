@@ -34,7 +34,7 @@ section {
   scroll-behavior: smooth;
 }
 .full-section > div {
-  margin-right: 10px
+  /* margin-right: 10px */
 }
 section.dark{
   background-color: var(--dark-mode-color);

@@ -1,14 +1,23 @@
 import './Options.css'
-// import DashboardIcon from '@mui/icons-material/Dashboard';
-import SchoolIcon from '@mui/icons-material/School';
-import CampaignIcon from '@mui/icons-material/Campaign';
+import SchoolIcon from "@mui/icons-material/School";
+import CampaignIcon from "@mui/icons-material/Campaign";
+import AdminPanelSettingsRoundedIcon from "@mui/icons-material/AdminPanelSettingsRounded";
+import PeopleRoundedIcon from "@mui/icons-material/PeopleRounded";
+import InfoIcon from "@mui/icons-material/Info";
+import AddToPhotosIcon from '@mui/icons-material/AddToPhotos';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 
 
 export default function Options(props) {
   
-  const icons = {
-    // 1: <DashboardIcon/>,
+  const icons = props.role === "admin"
+  ? {
+      1: <AdminPanelSettingsRoundedIcon />,
+      2: <AddToPhotosIcon/>,
+      3: <PeopleRoundedIcon />,
+      4: <InfoIcon />,
+    }
+  : {
     1: <SchoolIcon/>,
     2: <CampaignIcon/>,
     3: <PersonRoundedIcon/>,

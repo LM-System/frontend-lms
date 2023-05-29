@@ -3,13 +3,20 @@ import {Link} from 'react-router-dom';
 import Options from './Options/Options';
 
 export default function Sidebar(props) {
-
-  const sidebarOptions = [
-    // { id: 1, label: 'dashboard'},
-    { id: 1, label: 'courses'},
-    { id: 2, label: 'annoucments' },
-    { id: 3, label: 'profile'},
-  ];
+  let role = JSON.parse(localStorage.getItem("user_data")).role;
+  console.log(role);
+  const sidebarOptions =
+    role === "admin"
+      ? [
+          { id: 1, label: "Control Panel" },
+          { id: 2, label: "Course Control Panel" },
+          { id: 3, label: "Users" },
+        ]
+      : [
+        { id: 2, label: 'annoucments' },
+        { id: 3, label: 'profile'},
+        { id: 1, label: 'courses'},
+      ];
 
   return (
     <>
