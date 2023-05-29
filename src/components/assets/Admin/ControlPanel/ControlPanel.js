@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import TextField from '@mui/material/TextField';
 import './ControlPanel.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default function ControlPanel() {
 
 
 const [usersData,setUsersData]=useState([])
 const [user,setUser]=useState({})
+const [isClick,setIsClick]=useState(false)
 const [userInfo,setUserInfo]=useState({
   fname:"",
   lname:"",
@@ -36,7 +38,7 @@ useEffect(()=>{
 },[])
   return (
 <>
-<div className='crud'>
+{ isClick && <div className='crud'>
   <h2>Control Panel</h2>
   <TextField fullWidth label="First Name" value={userInfo.fname} onChange={LabelChange} name='fname' id="fullWidth" />
   <TextField fullWidth label="Last Name" value={userInfo.lname} onChange={LabelChange} name='lname' id="fullWidth" />
@@ -48,9 +50,13 @@ useEffect(()=>{
             console.log(ItemRole);
             const data=await axios.put(`${process.env.REACT_APP_SERVER_URL}updateuser/${user.id}`,userInfo)
             setUsersData(data.data)
+            setIsClick(false)
 
          }}>Update</button>
-</div>
+  <button className='delete-button ms-2 crud-button' onClick={ async()=>{
+            setIsClick(false)
+         }}>Cancel</button>
+</div>}
 <table >
 <thead> 
      <tr className="">
@@ -82,6 +88,7 @@ usersData.map((item,index)=>
               status:"off"
             })
             setUser(item)
+            setIsClick(true)
           }
         } className='update-button'>Update</button></td>
        <td><button
