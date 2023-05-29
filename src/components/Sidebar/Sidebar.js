@@ -11,6 +11,7 @@ export default function Sidebar(props) {
           { id: 1, label: "Control Panel" },
           { id: 2, label: "Users" },
           { id: 3, label: "About" },
+          { id: 4, label: "Course Control Panel" },
         ]
       : [
           { id: 1, label: "dashboard" },
