@@ -4,7 +4,6 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Main from './components/Main/Main';
 import Error from './components/assets/Error/Error';
 import Login from './components/assets/Login/Login';
-import Loading from './components/assets/Loading/Loading';
 import {Routes, Route, Navigate} from 'react-router-dom'
 
 function App() {
