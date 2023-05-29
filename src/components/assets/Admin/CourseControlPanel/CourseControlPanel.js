@@ -41,25 +41,25 @@ useEffect(()=>{
 },[])
   return (
 <>
-{isAdd && <div className='crud'>
-  <h2>Courses Control Panel</h2>
+{isAdd && <div className='CourseControlPanelcrud'>
+  <h2 className='CourseControlPanel-h2'>Courses Control Panel</h2>
   <TextField fullWidth label="Course Title"  onChange={LabelChange} name='title' id="fullWidth" />
   <TextField fullWidth label="Course Descreption"  onChange={LabelChange} name='descreption' id="fullWidth" />
   <TextField fullWidth label={isStartLabel} type='date' onFocus={()=>setIsStartLabel("Start Date")} onBlur={()=>setIsStartLabel("")} onChange={LabelChange} name='start_date' id="fullWidth" />
   <TextField fullWidth label={isEndLabel} type='date' onFocus={()=>setIsEndLabel("End Date")} onBlur={()=>setIsEndLabel("")} onChange={LabelChange} name=' end_date' id="fullWidth" />
   <TextField fullWidth label="Users Role" value={courseInfo.role} onChange={LabelChange} name='role' id="fullWidth" />
 
-  <button className='update-button crud-button' onClick={ async()=>{
+  <button className='CourseControlPanelupdate-button CourseControlPanelcrud-button' onClick={ async()=>{
             const ItemRole=course.role;
             console.log(ItemRole);
             const data=await axios.post(`${process.env.REACT_APP_SERVER_URL}admincourse/${userId}`,courseInfo)
             setIsAdd(false)
          }}>Add</button>
-           <button className='delete-button ms-2 crud-button' onClick={ async()=>{
+           <button className='CourseControlPaneldelete-button ms-2 CourseControlPanelcrud-button' onClick={ async()=>{
             setIsAdd(false)
          }}>Cancel</button>
 </div>}
-<table >
+<table className="CourseControlPanelTable">
 <thead> 
      <tr className="">
        <th>index</th>
@@ -73,7 +73,7 @@ useEffect(()=>{
 <tbody >
 {
 userData.map((item,index)=>
-<tr className={index % 2=== 0?"light-white-table":"white-table"} key={index}>
+<tr className={index % 2=== 0 ?"CourseControlPanelLight":"CourseControlPanelwhite"} key={index}>
        <td >{index+1}</td>
        <td>{item.fname}</td>
        <td>{item.lname}</td>
@@ -85,7 +85,7 @@ userData.map((item,index)=>
              setcourseInfo({role:item.role})  
              setIsAdd(true) 
             console.log(courseInfo);  }
-        } className='update-button'>Add Course</button></td>
+        } className='CourseControlPanelupdate-button'>Add Course</button></td>
 
     </tr>)
 }

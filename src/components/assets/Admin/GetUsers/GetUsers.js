@@ -14,7 +14,7 @@ console.log(usersData)
 
 return (
 <>
-<table >
+<table className="GetUsersTable">
 <thead>
      <tr className="">
        <th>index</th>
@@ -22,21 +22,18 @@ return (
        <th>Last Name</th>
        <th>Role</th>
        <th>Email</th>
-       {/* <td>Update</td>
-       <td>Delete</td> */}
+
      </tr>
 </thead>
 <tbody >
 {
 usersData.map((item,index)=>
-<tr className={index % 2=== 0?"light-white-table":"white-table"} key={index}>
+<tr className={index % 2=== 0?"GetUsersTablelight":"GetUsersTablewhite"} key={index}>
        <td >{index+1}</td>
        <td>{item.fname}</td>
        <td>{item.lname}</td>
-       <td>{item.role}</td>
        <td>{item.email}</td>
-       {/* <td>Update</td>
-       <td>Delete</td> */}
+       <td>{item.role}</td>
      </tr>)
 }
 </tbody>

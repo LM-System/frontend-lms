@@ -1,26 +1,26 @@
-table{
+.ControlPanelTable{
     min-width:100% ;
     border-spacing: 0px;
     }
-    table th {
+    .ControlPanelTable th {
         background-color: #f53844;
         padding: 15px;
         text-align: left;
         color: #f1f1f1;
         font-weight: bold;
     }
-    table td {
+    .ControlPanelTable td {
         padding: 15px;
         width: calc(100% / 7);
     }
-    .light-white-table{
+    .ControlPanelLight{
         background-color: #f2f2f2;
     }
-    .white-table{
+    .ControlPanelwhite{
         background-color: #fff;
     }
-
-    .update-button{
+ 
+    .ControlPanelupdate-button{
     padding: 6px 12px;
     border-radius: 10px;
     color: #f2f2f2;
@@ -28,14 +28,14 @@ table{
     border: 0.8px solid #ffc107;
     color: #2f2f2f;
     }
-    .delete-button{
-    padding: 6px 12px;
+    .ControlPaneldelete-button{
+    padding: 6px 10px;
     border-radius: 10px;
     color: #f2f2f2;
     background-color:#f53844 ;
     border: 0.8px solid #f53844;
     }
-    .crud{
+    .ControlPanelTableCrud{
         width: 50%;
         margin-left: auto;
         margin-right: auto;
@@ -43,17 +43,27 @@ table{
         margin-bottom: 1rem;
         border-radius: 10px;
         box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        background-color: white !important;
     }
-    .crud >div{
+    .ControlPanelTableCrud>div{
         margin-top: 1rem;
     }
 
-    .crud-button{
+    .ControlPanelcrud-button{
         margin-top: 2rem;
         padding: 12px 24px;
     }
+    .ControlPanelh2-crud{
+        color: black !important;
+    }
+    .ControlPanelLight td, .ControlPanelwhite td{
+        color: #2f2f2f;
+    }
+    .ControlPanelcursor{
+       cursor: pointer; 
+    }
     @media (max-width:575px) {
-        .crud{
+        .ControlPanelCrud{
             width: 100%;
         }
     }
