@@ -1,6 +1,6 @@
 export default function LoginBg() {
   return (
-    <div className="background">
+    <div className="login-background">
 				<span></span>
 				<span></span>
 				<span></span>
