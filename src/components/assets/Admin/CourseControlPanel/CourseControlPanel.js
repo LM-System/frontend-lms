@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import './CourseControlPanel.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function CourseControlPanel() {
+export default function CourseControlPanel(props) {
 
 
 const [userData,setUserData]=useState([])
@@ -37,7 +37,7 @@ useEffect(()=>{
 },[])
   return (
 <>
-{isAdd && <div className='crud'>
+{isAdd && <div className= {`${props.darkMode ? 'dark crud' : "crud"}`}>
   <h2>Courses Control Panel</h2>
   <TextField fullWidth label="Course Title"  onChange={LabelChange} name='title' id="fullWidth" />
   <TextField fullWidth label="Course Descreption"  onChange={LabelChange} name='descreption' id="fullWidth" />
@@ -52,7 +52,7 @@ useEffect(()=>{
             setIsAdd(false)
          }}>Cancel</button>
 </div>}
-<table >
+<table className= {`${props.darkMode ? 'dark controlPanelTable' : "controlPanelTable"}`}>
 <thead> 
      <tr className="">
        <th>index</th>

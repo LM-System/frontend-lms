@@ -14,7 +14,9 @@ export default function Options(props) {
       ? {
           1: <AdminPanelSettingsRoundedIcon />,
           2: <PeopleRoundedIcon />,
-          3: <InfoIcon />,
+          3: <AdminPanelSettingsRoundedIcon/>,
+          4: <AdminPanelSettingsRoundedIcon/>,
+          5: <InfoIcon />,
         }
       : {
           1: <DashboardIcon />,

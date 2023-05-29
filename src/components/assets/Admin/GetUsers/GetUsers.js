@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import './GetUsers.css'
-export default function GetUsers() {
+export default function GetUsers(props) {
 const [usersData,setUsersData]=useState([])
 const getUsersData= async ()=>{
   const result= await axios.get(process.env.REACT_APP_SERVER_URL+"getusers")
@@ -14,7 +14,7 @@ console.log(usersData)
 
 return (
 <>
-<table >
+<table className={`${props.darkMode ? 'dark' : ""}`}>
 <thead>
      <tr className="">
        <th>index</th>

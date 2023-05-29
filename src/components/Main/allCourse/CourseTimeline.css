@@ -6,3 +6,6 @@
 .textSecondary{
     color: #777777;
 }
+.coursesCardTitle{
+    border-bottom: 1px solid black;
+}

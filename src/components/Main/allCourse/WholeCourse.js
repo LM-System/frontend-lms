@@ -17,7 +17,8 @@ function AllCourse(props){
      2: <CourseTimeline darkMode={props.darkMode} thisCourseData={props.thisCourseData}/>
   }
   const [selectedNavOption, setSelectedNavOption] = useState(null)
-
+  
+console.log(selectedNavOption)
   function makeDiscSelected (){
  setSelectedNavOption(0)
   }
@@ -45,7 +46,7 @@ function AllCourse(props){
         <Modal.Body id='modalBody' className={`${props.darkMode ? 'dark' : ""}`}>
   
         <div class="thisNav">
-          <div onClick={makeDiscSelected} className= {`${selectedNavOption === 0 ? 'selectedOption' : ''} ${props.darkMode ? 'dark' : ""}`}>
+          <div onClick={makeDiscSelected} className= {`${selectedNavOption ===   0 ? 'selectedOption' : ''} ${props.darkMode ? 'dark' : ""}`}>
             <div  className="bottons">
                Discription 
                </div>
@@ -66,7 +67,7 @@ function AllCourse(props){
         <Image className='modalImage' src="https://www.classcentral.com/report/wp-content/uploads/2022/06/JavaScript-BCG-Banner-icons.png" rounded width='100%' />
         <p></p>
        
-        {navSectionContents[selectedNavOption]}
+        {navSectionContents[selectedNavOption || 0]}
      
         </Modal.Body>
         

@@ -4,8 +4,8 @@ function CourseDescription(props){
   return(
 
 <Card.Body className='discriptionBody'>
-  <Card.Title>Discription:</Card.Title>
-  <Card></Card>
+  <Card.Title className='coursesCardTitle'>Discription:</Card.Title>
+ 
   <p></p>
   <Card.Text>
   {props.thisCourseData.descreption}

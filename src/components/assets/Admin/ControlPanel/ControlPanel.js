@@ -3,7 +3,7 @@ import axios from 'axios'
 import TextField from '@mui/material/TextField';
 import './ControlPanel.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-export default function ControlPanel() {
+export default function ControlPanel(props) {
 
 
 const [usersData,setUsersData]=useState([])
@@ -38,12 +38,12 @@ useEffect(()=>{
 },[])
   return (
 <>
-{ isClick && <div className='crud'>
+{ isClick && <div className= {`${props.darkMode ? 'dark crud' : "crud"}`}>
   <h2>Control Panel</h2>
-  <TextField fullWidth label="First Name" value={userInfo.fname} onChange={LabelChange} name='fname' id="fullWidth" />
-  <TextField fullWidth label="Last Name" value={userInfo.lname} onChange={LabelChange} name='lname' id="fullWidth" />
-  <TextField fullWidth label="Email" value={userInfo.email} onChange={LabelChange} name='email' id="fullWidth" />
-  <TextField fullWidth label="Role" value={userInfo.role} onChange={LabelChange} name='role' id="fullWidth" />
+  <TextField className='controlInput' fullWidth label="First Name" value={userInfo.fname} onChange={LabelChange} name='fname' id="fullWidth" />
+  <TextField className='controlInput' fullWidth label="Last Name" value={userInfo.lname} onChange={LabelChange} name='lname' id="fullWidth" />
+  <TextField className='controlInput' fullWidth label="Email" value={userInfo.email} onChange={LabelChange} name='email' id="fullWidth" />
+  <TextField className='controlInput' fullWidth label="Role" value={userInfo.role} onChange={LabelChange} name='role' id="fullWidth" />
 
   <button className='update-button crud-button' onClick={ async()=>{
             const ItemRole=user.role;

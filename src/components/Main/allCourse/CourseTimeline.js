@@ -9,53 +9,60 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import Card from 'react-bootstrap/Card';
 
 function CourseTimeline(props){
+  function fixdate(prop){
+    if (prop !== null){
+    console.log(prop)
+    let indexofT = prop.indexOf('T')
+    let result = prop.slice(0,indexofT)
+    return result}
+  }
+  
 return(
 
       <Card.Body className='timelineBody'>
-        <Card.Title>Timeline:</Card.Title>
-        <Card></Card>
+        <Card.Title className='coursesCardTitle'>Timeline:</Card.Title>
         <p></p>
         <Card.Text>
         <Timeline className={`${props.darkMode ? 'dark' : ""}`} position="alternate">
       <TimelineItem>
         <TimelineOppositeContent className="textSecondary">
-          09:30 am
+          {fixdate(props.thisCourseData.start_date)}
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot />
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>Eat</TimelineContent>
+        <TimelineContent>Start date</TimelineContent>
       </TimelineItem>
       <TimelineItem>
         <TimelineOppositeContent className="textSecondary">
-          10:00 am
+        2023-05-10
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot />
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>Code</TimelineContent>
+        <TimelineContent>Preperation course</TimelineContent>
       </TimelineItem>
       <TimelineItem>
         <TimelineOppositeContent className="textSecondary">
-          12:00 am
+        2023-05-11
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot />
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>Sleep</TimelineContent>
+        <TimelineContent>Advance course</TimelineContent>
       </TimelineItem>
       <TimelineItem>
         <TimelineOppositeContent className="textSecondary">
-          9:00 am
+        {fixdate(props.thisCourseData.end_date)}
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot />
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>Repeat</TimelineContent>
+        <TimelineContent>End date</TimelineContent>
       </TimelineItem>
     </Timeline>
         </Card.Text>

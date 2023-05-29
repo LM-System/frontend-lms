@@ -8,7 +8,9 @@ section {
   transition: 0.5s;
  
 }
-section.dark{
+
+
+  #section-id.dark{
   background-color: #363436;
 
 }

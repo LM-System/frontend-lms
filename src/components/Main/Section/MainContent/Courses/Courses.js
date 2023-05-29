@@ -32,6 +32,13 @@ const sendThisCourse = (item)=>{
 const handleclose = () => {
   setShow(false);
 }
+function fixdate(prop){
+  if (prop !== null){
+  console.log(prop)
+  let indexofT = prop.indexOf('T')
+  let result = prop.slice(0,indexofT)
+  return result}
+}
 
   return ( 
     <>
@@ -50,7 +57,7 @@ const handleclose = () => {
            <div className="ag-courses-item_date-box">
              Start:
              <span className="ag-courses-item_date">
-               04.11.2022
+               {fixdate(item.start_date)}
              </span>
            </div>
          </div>

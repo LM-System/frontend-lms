@@ -1,3 +1,22 @@
+.dark{
+    .light-white-table{
+        background-color: #424242;
+        color: white;
+    }
+    .white-table{
+        background-color: #767676;
+        color: white;
+    }
+    .crud{
+        
+        background-color: #f1f1f1;
+    }
+    .controlInput{
+        color: white;
+    }
+}
+
+
 table{
     min-width:100% ;
     border-spacing: 0px;
