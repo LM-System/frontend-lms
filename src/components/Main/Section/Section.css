@@ -3,9 +3,14 @@ section {
   margin-left: auto;
   height: calc(100vh - 78px);
   padding: 20px;
-  padding-right: 10px;
+  padding-right: 20px;
   position: relative;
   transition: 0.5s;
+ 
+}
+section.dark{
+  background-color: #363436;
+
 }
 
 @media (max-width: 992px) {
@@ -32,6 +37,9 @@ section {
   height: 100%;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
 }
 
 .full-section::-webkit-scrollbar {
