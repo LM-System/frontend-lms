@@ -1,0 +1,10 @@
+.profile-container {
+  display: flex;
+  flex-flow: row;
+  gap: 20px;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .profile-container { flex-flow: column-reverse; }
+}

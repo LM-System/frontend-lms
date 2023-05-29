@@ -2,7 +2,6 @@ import './Login.css'
 import './Login.scss'
 import LoginBg from './LoginBg';
 import Loading from '../Loading/Loading';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { useState } from 'react';
 import {Link , useNavigate} from 'react-router-dom'
 import axios from 'axios'
@@ -39,8 +38,8 @@ export default function Login(props) {
 				props.setIsLogin(true)
 				localStorage.setItem('user_data', JSON.stringify(result.data.rows[0]))
 				const user = JSON.parse(localStorage.getItem('user_data'))
-				const body = { status: "on"}
-				axios.put(`${process.env.REACT_APP_SERVER_URL}updatestatues/${user.id}`, body)
+				const body = { ...user, status: "on"}
+				axios.put(`${process.env.REACT_APP_SERVER_URL}userinformtion/${user.id}`, body)
 				.then(userData => localStorage.setItem('user_data', JSON.stringify(userData.data[0])))
 				navigate('/')
 				setIsLoading(false)
