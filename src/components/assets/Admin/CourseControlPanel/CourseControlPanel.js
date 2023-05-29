@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import TextField from '@mui/material/TextField';
 import './CourseControlPanel.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export default function CourseControlPanel() {
 
 
 const [userData,setUserData]=useState([])
 const [course,setCourse]=useState({})
 const [userId,setUserId]=useState("")
+const [isAdd,setIsAdd]=useState(false)
 const [courseInfo,setcourseInfo]=useState({
   title:"",
   descreption:"",
@@ -34,19 +37,21 @@ useEffect(()=>{
 },[])
   return (
 <>
-<div className='crud'>
+{isAdd && <div className='crud'>
   <h2>Courses Control Panel</h2>
-  <TextField fullWidth label="Course Title"  onChange={LabelChange} name='fname' id="fullWidth" />
-  <TextField fullWidth label="Course Descreption"  onChange={LabelChange} name='lname' id="fullWidth" />
-  <TextField fullWidth label="Users Role"  onChange={LabelChange} name='email' id="fullWidth" />
+  <TextField fullWidth label="Course Title"  onChange={LabelChange} name='title' id="fullWidth" />
+  <TextField fullWidth label="Course Descreption"  onChange={LabelChange} name='descreption' id="fullWidth" />
+  <TextField fullWidth label="Users Role" value={courseInfo.role} onChange={LabelChange} name='role' id="fullWidth" />
   <button className='update-button crud-button' onClick={ async()=>{
             const ItemRole=course.role;
             console.log(ItemRole);
-            const data=await axios.put(`${process.env.REACT_APP_SERVER_URL}updateuser/${userId}`,courseInfo)
-            setUserData(data.data)
-
+            const data=await axios.post(`${process.env.REACT_APP_SERVER_URL}admincourse/${userId}`,courseInfo)
+            setIsAdd(false)
          }}>Add</button>
-</div>
+           <button className='delete-button ms-2 crud-button' onClick={ async()=>{
+            setIsAdd(false)
+         }}>Cancel</button>
+</div>}
 <table >
 <thead> 
      <tr className="">
@@ -70,7 +75,9 @@ userData.map((item,index)=>
        <td><button
         onClick={()=>{
             setUserId(item.id)  ;
-                  }
+             setcourseInfo({role:item.role})  
+             setIsAdd(true) 
+            console.log(courseInfo);  }
         } className='update-button'>Add Course</button></td>
 
     </tr>)
