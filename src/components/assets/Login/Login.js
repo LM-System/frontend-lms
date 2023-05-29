@@ -6,6 +6,69 @@ import {Link , useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 export default function Login(props) {
+const malek=
+{
+	courses:[
+		{
+			title:"Life Skills",
+			description:"",
+			image_path:"",
+			start_date:"22-5-2022",			
+			end_date:"22-5-2022",
+			level:"",
+			
+		},
+		{
+			title:"JavaScript fundementals",
+			description:"",
+			image_path:"",
+			start_date:"22-5-2022",			
+			end_date:"22-5-2022",			
+			level:"",
+
+		}
+		,
+		{
+			title:"Web Design / HTML && CSS",
+			description:"",
+			image_path:"",
+			start_date:"22-5-2022",			
+			end_date:"22-5-2022",			
+			level:"",
+
+		}
+		,
+		{
+			title:"English L1",
+			description:"",
+			image_path:"",
+			start_date:"22-5-2022",			
+			end_date:"22-5-2022",			
+			level:"",
+
+		},
+		{
+			title:"English L2",
+			description:"",
+			image_path:"",
+			start_date:"22-5-2022",			
+			end_date:"22-5-2022",			
+			level:"",
+
+		}
+		,
+		{
+			title:"Career",
+			description:"",
+			image_path:"",
+			start_date:"22-5-2022",			
+			end_date:"22-5-2022",			
+			level:"",
+
+		}
+	]
+}
+
 	const navigate = useNavigate()
 	const [signInData, setSignInData] = useState(
 		{

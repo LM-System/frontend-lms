@@ -5,6 +5,7 @@ import Settings from "./Settings/Settings";
 import ControlPanel from "../../../assets/Admin/ControlPanel/ControlPanel";
 import GetUsers from "../../../assets/Admin/GetUsers/GetUsers";
 import AboutUsPage from "./Aboutus/AboutUsPage";
+import CourseControlPanel from "../../../assets/Admin/CourseControlPanel/CourseControlPanel";
 
 export default function MainContent(props) {
   let role = JSON.parse(localStorage.getItem("user_data")).role;
@@ -15,6 +16,7 @@ export default function MainContent(props) {
           1: <ControlPanel />,
           2: <GetUsers />,
           3: <AboutUsPage />,
+          4: <CourseControlPanel/>,
         }
       : {
           1: <Dashboard />,
