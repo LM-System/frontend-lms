@@ -31,7 +31,10 @@ function AboutUsPage() {
                   href="https://www.linkedin.com/in/mohammad-a-8903911a0/"
                   target="_blank"
                 >
-                  <i className="fab fa-brands fa-linkedin fill-icon"></i>
+                  <i className="fab fa-brands fa-linkedin fill-icon-linkedin"></i>
+                </a>
+                <a href="https://github.com/MohammedAbuEssa" target="_blank">
+                  <i className="fab fa-brands fa-github fill-icon-github"></i>
                 </a>
               </div>
               <h5 className="carousel-item__details--title">
@@ -50,7 +53,10 @@ function AboutUsPage() {
                   href="https://www.linkedin.com/in/helmiqatqat/"
                   target="_blank"
                 >
-                  <i className="fab fa-brands fa-linkedin fill-icon"></i>
+                  <i className="fab fa-brands fa-linkedin fill-icon-linkedin"></i>
+                </a>
+                <a href="https://github.com/Helmi-Qatqat" target="_blank">
+                  <i className="fab fa-brands fa-github fill-icon-github"></i>
                 </a>
               </div>
               <h5 className="carousel-item__details--title">Helmi Qatqat</h5>
@@ -67,7 +73,10 @@ function AboutUsPage() {
                   href="https://www.linkedin.com/in/mhd-keath-zaytowna-407519258"
                   target="_blank"
                 >
-                  <i className="fab fa-brands fa-linkedin fill-icon"></i>
+                  <i className="fab fa-brands fa-linkedin fill-icon-linkedin"></i>
+                </a>
+                <a href="https://github.com/Mohammad-Keath" target="_blank">
+                  <i className="fab fa-brands fa-github fill-icon-github"></i>
                 </a>
               </div>
               <h5 className="carousel-item__details--title">
@@ -86,7 +95,10 @@ function AboutUsPage() {
                   href="https://www.linkedin.com/in/malek-al-sheekh-hasan-1a451a25a"
                   target="_blank"
                 >
-                  <i className="fab fa-brands fa-linkedin fill-icon"></i>
+                  <i className="fab fa-brands fa-linkedin fill-icon-linkedin"></i>
+                </a>
+                <a href="https://github.com/MalekHasan" target="_blank">
+                  <i className="fab fa-brands fa-github fill-icon-github"></i>
                 </a>
               </div>
               <h5 className="carousel-item__details--title">Malek Hasan</h5>

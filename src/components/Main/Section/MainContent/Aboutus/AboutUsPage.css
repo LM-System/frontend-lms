@@ -161,10 +161,18 @@ body {
 .carousel-item__details .carousel-item__details--title,
 .carousel-item__details--subtitle {
   color: #fff;
+  font-size: 7px;
   margin: 5px 0;
 }
 
-.fill-icon{
+.fill-icon-linkedin{
   color: #0e76a8;
+  font-size: 20px;
+  margin: right 2px;
+  padding-right: 2%;
+} 
+
+.fill-icon-github{
+  color: gray;
   font-size: 20px;
 }
