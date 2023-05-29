@@ -5,11 +5,14 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Main from './components/Main/Main';
 import Error from './components/assets/Error/Error';
 import Login from './components/assets/Login/Login';
-import Loading from './components/assets/Loading/Loading';
 import {Routes, Route, Navigate} from 'react-router-dom'
 
 function App() {
-  const [selectedOption, setSelectedOption] = useState(null)
+  const [selectedOption, setSelectedOption] = useState(
+    JSON.parse(sessionStorage.getItem('selectedOption')) || 1
+  )
+
+
   const [isLogin, setIsLogin] = useState(
     localStorage.getItem('user_data') ? true : false
   )
@@ -23,7 +26,7 @@ function App() {
   useEffect(() => {
     setSidebarVisibility(prevState => JSON.parse(localStorage.getItem('isSidebarVisible')))
   }, [isSidebarVisible])
-
+  
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem('darkMode') || false))
   function darkModeToggle() {
@@ -33,7 +36,7 @@ function App() {
   useEffect(() => {
     setDarkMode(prevState => JSON.parse(localStorage.getItem('darkMode')))
   }, [darkMode])
-  
+
   return (
     <div className='body-container'>
       <Routes>
@@ -42,17 +45,18 @@ function App() {
           <>
             { isLogin ? <>
               <Sidebar
-              isSidebarVisible={isSidebarVisible}
-              darkMode={darkMode}
-              selectedOption={selectedOption}
-              setSelectedOption={setSelectedOption}/>
+                isSidebarVisible={isSidebarVisible}
+                darkMode={darkMode}
+                selectedOption={selectedOption}
+                setSelectedOption={setSelectedOption}/>
               <Main
-              isSidebarVisible={isSidebarVisible}
-              sidebarToggle={sidebarToggle}
-              darkMode={darkMode}
-              selectedOption={selectedOption}
-              darkModeToggle={() => darkModeToggle()}
-              setIsLogin={setIsLogin}/>
+                isSidebarVisible={isSidebarVisible}
+                sidebarToggle={sidebarToggle}
+                darkMode={darkMode}
+                darkModeToggle={() => darkModeToggle()}
+                selectedOption={selectedOption}
+                setSelectedOption={setSelectedOption}
+                setIsLogin={setIsLogin}/>
               </> : <Navigate to='login'/>}
           </>
           

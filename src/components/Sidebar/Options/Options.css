@@ -32,6 +32,9 @@
   font-weight: 600;
 }
 
+.side-bar-options li:hover {
+  cursor: pointer;
+}
 
 @media (max-width: 575px) {
   .side-bar-options li {

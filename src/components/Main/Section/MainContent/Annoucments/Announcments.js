@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from "react";
+import './Announcments.css'
+import { useState, useEffect } from "react";
 import axios from "axios";
-import Card from "react-bootstrap/Card";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Style from "./Announcments.css";
 
-export default function Annoucments() {
+export default function Annoucments(props) {
   const [annoucments, setAnnoucments] = useState([]);
 
   const sendReq = async () => {
     const serverUrl = `${process.env.REACT_APP_SERVER_URL}getanouncment`;
     const result = await axios.get(serverUrl);
-    // console.log(result.data);
     setAnnoucments(result.data);
   };
 
@@ -21,13 +17,11 @@ export default function Annoucments() {
 
   return (
     <>
-      <div className="grid-container ">
-        {annoucments.map((item, idx) => (
-          <div className="row">
-            <div className="card">
-              <h4>{item.anouncment_title}</h4>
-              <p>{item.anouncment_body}</p>
-            </div>
+      <div className={`grid-container ${props.darkMode ? 'dark' : ''}`}>
+        {annoucments.map((item) => (
+          <div className="announcment-card">
+            <h4>{item.anouncment_title}</h4>
+            <p>{item.anouncment_body}</p>
           </div>
         ))}
       </div>
