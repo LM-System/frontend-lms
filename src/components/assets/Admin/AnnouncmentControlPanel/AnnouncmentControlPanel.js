@@ -2,6 +2,8 @@ import './AnnouncmentControlPanel.css'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { TextField } from '@mui/material';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+
 export default function AnnouncmentControlPanel(props) {
   const [announcmentNum,setAnnouncmentNum]=useState(0)
   const [announcmentsData,setAnnouncmentsData]=useState([])
@@ -22,6 +24,7 @@ export default function AnnouncmentControlPanel(props) {
     anouncment_body:"",
    
   })
+  const Break = "   "
   function LabelChange(event) {
     const {name, value} = event.target
       setAnnouncmentContent(prevFormData => {
@@ -58,6 +61,7 @@ export default function AnnouncmentControlPanel(props) {
      <p></p>
      {addIsClicked && <button 
         onClick={async()=>{ 
+          setShowForm(false)
           const serverUrl = `${process.env.REACT_APP_SERVER_URL}addanouncment`;
           const result = await axios.post(serverUrl,announcmentContent);
        }} className='update-button crud-button'>send</button>}
@@ -73,7 +77,7 @@ export default function AnnouncmentControlPanel(props) {
             }
             )
          }}>Update</button>}
-          {isClicked &&
+          
        <button className='update-button crud-button' onClick={ ()=>{
             setIsClicked(false)
             setAnnouncmentContent({
@@ -82,7 +86,7 @@ export default function AnnouncmentControlPanel(props) {
             }
             )
             setShowForm(false)
-         }}>cancel update</button>}
+         }}>cancel </button>
          <p></p>
          </div>}
     
@@ -103,7 +107,11 @@ export default function AnnouncmentControlPanel(props) {
        <th>announcment title</th>
        <th>announcment body</th>
        <th>Update</th>
-       <th>Delete</th>
+       <th>Delete &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <AddCircleOutlineIcon className='cursor' onClick={()=>{
+          setAddIsClicked(true)
+          setShowForm(true)
+          console.log(addIsClicked)
+       }}/></th>
      </tr>
 </thead>
 <tbody >

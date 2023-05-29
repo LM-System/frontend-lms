@@ -70,3 +70,6 @@ table{
         font-size: 20px;
         font: bold;
     }
+    .cursor{
+        cursor: pointer;
+    }
