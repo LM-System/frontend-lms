@@ -1,19 +1,16 @@
 import './Options.css'
-import DashboardIcon from '@mui/icons-material/Dashboard';
 import SchoolIcon from '@mui/icons-material/School';
 import CampaignIcon from '@mui/icons-material/Campaign';
-import SettingsIcon from '@mui/icons-material/Settings';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import {Link} from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 
 export default function Options(props) {
   
   const icons = {
-    // 1: <DashboardIcon/>,
     1: <SchoolIcon/>,
     2: <CampaignIcon/>,
     3: <PersonRoundedIcon/>,
+    4: <InfoRoundedIcon/>,
   }
 
   function firstLetterUpperCase(str) {

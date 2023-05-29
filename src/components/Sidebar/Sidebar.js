@@ -5,10 +5,10 @@ import Options from './Options/Options';
 export default function Sidebar(props) {
 
   const sidebarOptions = [
-    // { id: 1, label: 'dashboard'},
     { id: 1, label: 'courses'},
     { id: 2, label: 'annoucments' },
     { id: 3, label: 'profile'},
+    { id: 4, label: 'about us'}
   ];
 
   return (
