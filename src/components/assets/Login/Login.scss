@@ -3,7 +3,7 @@ body {
   overflow: hidden;
 }
 
-.background {
+.login-background {
   width: 100vw;
   height: 100vh;
   background: #16062c;
@@ -12,7 +12,7 @@ body {
 $particleSize: 20vmin;
 $animationDuration: 30s;
 $amount: 20;
-.background span {
+.login-background span {
   width: $particleSize;
   height: $particleSize;
   border-radius: $particleSize;
