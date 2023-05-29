@@ -23,11 +23,9 @@ export default function Annoucments() {
     <>
       <div className="grid-container ">
         {annoucments.map((item, idx) => (
-          <div className="row">
-            <div className="card">
-              <h4>{item.anouncment_title}</h4>
-              <p>{item.anouncment_body}</p>
-            </div>
+          <div className="card">
+            <h4>{item.anouncment_title}</h4>
+            <p>{item.anouncment_body}</p>
           </div>
         ))}
       </div>

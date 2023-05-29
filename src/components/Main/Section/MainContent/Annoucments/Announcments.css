@@ -19,7 +19,7 @@
 .card {
   border-radius: 10px;
   filter: drop-shadow(0 5px 10px 0 #ffffff);
-  width: 400px;
+  flex-basis: calc(50% - 10px);
   height: 180px;
   background-color: #ffffff;
   padding: 20px;
@@ -27,6 +27,21 @@
   z-index: 0;
   overflow: hidden;
   transition: 0.2s ease-in;
+}
+
+@media (max-width: 575px) {
+  .card {
+    border-radius: 10px;
+    filter: drop-shadow(0 5px 10px 0 #ffffff);
+    flex-basis: 100%;
+    height: 180px;
+    background-color: #ffffff;
+    padding: 20px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    transition: 0.2s ease-in;
+  }
 }
 
 .card::before {
@@ -47,7 +62,7 @@
 .card:hover::before{
     transition-delay:0.2s ;
 
-  transform: scale(40);
+  transform: scale(50);
 }
 
 .card:hover{
@@ -60,9 +75,10 @@
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 20px;
+    display: flex;
+    /* grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
+    flex-wrap:wrap ;
+    gap: 10px;
     justify-items: center;
     width: 100%;
   } 
