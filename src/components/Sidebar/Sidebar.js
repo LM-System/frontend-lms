@@ -1,6 +1,6 @@
-import './Sidebar.css'
-import {Link} from 'react-router-dom';
-import Options from './Options/Options';
+import "./Sidebar.css";
+import { Link } from "react-router-dom";
+import Options from "./Options/Options";
 
 export default function Sidebar(props) {
   let role = JSON.parse(localStorage.getItem("user_data")).role;
@@ -11,11 +11,13 @@ export default function Sidebar(props) {
           { id: 1, label: "Control Panel" },
           { id: 2, label: "Course Control Panel" },
           { id: 3, label: "Users" },
+          { id: 4, label: 'about us'}
         ]
       : [
+        { id: 1, label: 'courses'},
         { id: 2, label: 'annoucments' },
         { id: 3, label: 'profile'},
-        { id: 1, label: 'courses'},
+        { id: 4, label: 'about us'}
       ];
 
   return (
@@ -31,8 +33,9 @@ export default function Sidebar(props) {
           sidebarOptions={sidebarOptions}
           setSelectedOption={props.setSelectedOption}
           selectedOption={props.selectedOption}
-          darkMode={props.darkMode}/>
+          darkMode={props.darkMode}
+        />
       </div>
     </>
-  )
+  );
 }

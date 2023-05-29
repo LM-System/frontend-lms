@@ -33,9 +33,7 @@ section {
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
-.full-section > div {
-  /* margin-right: 10px */
-}
+
 section.dark{
   background-color: var(--dark-mode-color);
   color: white;
