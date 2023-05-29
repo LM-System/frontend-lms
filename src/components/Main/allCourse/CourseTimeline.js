@@ -1,3 +1,4 @@
+import './CourseTimeline.css'
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -9,14 +10,15 @@ import Card from 'react-bootstrap/Card';
 
 function CourseTimeline(props){
 return(
-<Card>
+
       <Card.Body className='timelineBody'>
         <Card.Title>Timeline:</Card.Title>
         <Card></Card>
+        <p></p>
         <Card.Text>
-        <Timeline position="alternate">
+        <Timeline className={`${props.darkMode ? 'dark' : ""}`} position="alternate">
       <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
+        <TimelineOppositeContent className="textSecondary">
           09:30 am
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -26,7 +28,7 @@ return(
         <TimelineContent>Eat</TimelineContent>
       </TimelineItem>
       <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
+        <TimelineOppositeContent className="textSecondary">
           10:00 am
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -36,7 +38,7 @@ return(
         <TimelineContent>Code</TimelineContent>
       </TimelineItem>
       <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
+        <TimelineOppositeContent className="textSecondary">
           12:00 am
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -46,7 +48,7 @@ return(
         <TimelineContent>Sleep</TimelineContent>
       </TimelineItem>
       <TimelineItem>
-        <TimelineOppositeContent color="text.danger">
+        <TimelineOppositeContent className="textSecondary">
           9:00 am
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -58,6 +60,6 @@ return(
     </Timeline>
         </Card.Text>
       </Card.Body>
-      </Card>
+      
 )}
 export default CourseTimeline

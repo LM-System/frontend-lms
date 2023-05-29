@@ -3,6 +3,23 @@
     color: white;
     border-bottom: 1px solid #222022;
 }
+.dark{
+    .bottons {
+        color: white;
+    }
+    .selectedOption{
+        background-color: #4b4b4b;
+    }
+    .thisNav{
+        border-bottom: 1px solid #454545; 
+    }
+    .text.secondary{
+        color:darkgray
+    }
+    .bottons:hover{
+        color: gray;
+    }
+}
 #modalBody.dark{
     background-color: #222022;
     color: white;
