@@ -1,0 +1,28 @@
+.contentTable{
+    border: 1px solid black;
+}
+.TrOfContent{
+    border: 1px solid black;
+}
+.ThOfContent{
+    border: 1px solid black;
+    background-color: #b33860;
+}
+.TdOfContent{
+    border: 1px solid black;
+}
+.dark{
+    .contentTable{
+        border: 1px solid gray;
+    }
+    .TrOfContent{
+        border: 1px solid gray;
+    }
+    .ThOfContent{
+        border: 1px solid gray;
+        background-color: #b33860;
+    }
+    .TdOfContent{
+        border: 1px solid gray;
+    }
+}

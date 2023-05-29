@@ -1,6 +1,7 @@
 table{
     min-width:100% ;
     border-spacing: 0px;
+    height: 30px;
     }
     table th {
         background-color: #f53844;
@@ -13,11 +14,14 @@ table{
         padding: 15px;
         width: calc(100% / 7);
     }
+    
     .light-white-table{
         background-color: #f2f2f2;
+        height: 20px;
     }
     .white-table{
         background-color: #fff;
+        
     }
 
     .update-button{

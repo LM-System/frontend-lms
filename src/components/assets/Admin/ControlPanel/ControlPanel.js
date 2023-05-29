@@ -39,7 +39,7 @@ useEffect(()=>{
   return (
 <>
 { isClick && <div className='crud'>
-  <h2>Control Panel</h2>
+  <h2 className='formTitleHide'>Control Panel</h2>
   <TextField fullWidth label="First Name" value={userInfo.fname} onChange={LabelChange} name='fname' id="fullWidth" />
   <TextField fullWidth label="Last Name" value={userInfo.lname} onChange={LabelChange} name='lname' id="fullWidth" />
   <TextField fullWidth label="Email" value={userInfo.email} onChange={LabelChange} name='email' id="fullWidth" />

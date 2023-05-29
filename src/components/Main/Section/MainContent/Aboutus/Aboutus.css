@@ -136,3 +136,7 @@
   transform: translateY(0px);
   opacity: 1;
 }
+.sci{
+  padding-left: 0;
+  justify-content: center;
+}

@@ -1,0 +1,70 @@
+.modalHeader{
+    background-image: var(--linear-gradient);
+    color: white;
+    border-bottom: 1px solid #222022;
+}
+.dark{
+    .bottons {
+        color: white;
+    }
+    .selectedOption{
+        background-color: #4b4b4b;
+    }
+    .thisNav{
+        border-bottom: 1px solid #454545; 
+    }
+    .text.secondary{
+        color:darkgray
+    }
+    .bottons:hover{
+        color: gray;
+    }
+}
+#modalBody.dark{
+    background-color: #222022;
+    color: white;
+}
+.bottons{
+    color: black;
+}
+
+#discription.dark{
+    background-color: red;
+
+}
+.bottons:hover.dark{
+    color:white
+}
+.bottons:hover{
+    color:black;
+    cursor: pointer;
+}
+.thisNav{
+    display: flex;
+    border-bottom: 1px solid #dddbdb;
+
+}
+.bottons{
+    padding: 8px;
+}
+
+.selectedOption{
+       border: 1px solid #8f8a8a;
+       border-bottom: 0;
+       background-color: #dddbdb;
+      color:black !important;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+
+    }
+    .selectedOption.bottons{
+        color: black ;
+    }
+    #timeLineHead.selectedOption{
+   color: black;
+    }
+    .bottons.dark{
+        color: white !important;
+        background-color: red !important;
+       
+    }

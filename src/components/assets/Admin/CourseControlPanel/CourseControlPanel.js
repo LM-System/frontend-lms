@@ -42,7 +42,7 @@ useEffect(()=>{
   return (
 <>
 {isAdd && <div className='crud'>
-  <h2>Courses Control Panel</h2>
+  <h2 className='formTitleHide'>Courses Control Panel</h2>
   <TextField fullWidth label="Course Title"  onChange={LabelChange} name='title' id="fullWidth" />
   <TextField fullWidth label="Course Descreption"  onChange={LabelChange} name='descreption' id="fullWidth" />
   <TextField fullWidth label={isStartLabel} type='date' onFocus={()=>setIsStartLabel("Start Date")} onBlur={()=>setIsStartLabel("")} onChange={LabelChange} name='start_date' id="fullWidth" />

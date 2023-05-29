@@ -9,13 +9,15 @@ import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 
 export default function Options(props) {
-  
-  const icons = props.role === "admin"
+  let role = JSON.parse(localStorage.getItem("user_data")).role;
+
+  const icons = role === "admin"
   ? {
       1: <AdminPanelSettingsRoundedIcon />,
       2: <AddToPhotosIcon/>,
       3: <PeopleRoundedIcon />,
-      4: <InfoIcon />,
+      4: <AdminPanelSettingsRoundedIcon/>,
+      5: <InfoIcon />,
     }
   : {
     1: <SchoolIcon/>,
