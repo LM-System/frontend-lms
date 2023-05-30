@@ -46,18 +46,18 @@ function fixdate(prop){
     <div id='ag-format-container' className={` ${props.darkMode ? 'dark' : ""}`}>
   <div className="ag-courses_box"></div>
       {showCourses.map((item, idx) => (
-         <div className="ag-courses_item">
+         <div className={`ag-courses_item ${props.darkMode ? 'dark' : ""}`}>
          <div onClick={()=>{sendThisCourse(item)}} className="ag-courses-item_link">
            <div className="ag-courses-item_bg"></div>
    
            <div className="ag-courses-item_title">
-             {item.title}
+             {item.title[0].toUpperCase() + item.title.slice(1)}
            </div>
    
            <div className="ag-courses-item_date-box">
-             Start:
+             
              <span className="ag-courses-item_date">
-               {fixdate(item.start_date)}
+             Start: {fixdate(item.start_date)}
              </span>
            </div>
          </div>

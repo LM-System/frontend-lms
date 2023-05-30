@@ -62,7 +62,7 @@ useEffect(()=>{
 <table className="crudeTable">
 <thead> 
      <tr className="">
-       <th className='thOfControlTable'>index</th>
+       <th className='thOfControlTable'>Index</th>
        <th className='thOfControlTable'>First Name</th>
        <th className='thOfControlTable'>Last Name</th>
        <th className='thOfControlTable'>Role</th>
