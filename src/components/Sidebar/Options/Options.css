@@ -13,6 +13,7 @@
     flex-flow: row;
     width: 100%;
     justify-content: space-between;
+    margin-bottom: 0;
   }
   .side-bar-options li {
     padding: 15px !important;
