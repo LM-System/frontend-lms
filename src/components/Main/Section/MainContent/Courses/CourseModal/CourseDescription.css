@@ -1,0 +1,9 @@
+.dark{
+    .discriptionBody{
+        background-color: black;
+    }
+}
+#coursesCardTitle{
+    padding: 10px;
+    margin: 20px;
+}

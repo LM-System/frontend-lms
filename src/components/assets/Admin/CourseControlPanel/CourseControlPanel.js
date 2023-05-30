@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import TextField from '@mui/material/TextField';
 import './CourseControlPanel.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function CourseControlPanel() {
 
@@ -41,8 +41,8 @@ useEffect(()=>{
 },[])
   return (
 <>
-{isAdd && <div className='CourseControlPanelcrud'>
-  <h2 className='CourseControlPanel-h2'>Courses Control Panel</h2>
+{isAdd && <div className='crud'>
+  <h2 className='formTitleHide'>Courses Control Panel</h2>
   <TextField fullWidth label="Course Title"  onChange={LabelChange} name='title' id="fullWidth" />
   <TextField fullWidth label="Course Descreption"  onChange={LabelChange} name='descreption' id="fullWidth" />
   <TextField fullWidth label={isStartLabel} type='date' onFocus={()=>setIsStartLabel("Start Date")} onBlur={()=>setIsStartLabel("")} onChange={LabelChange} name='start_date' id="fullWidth" />
@@ -73,7 +73,7 @@ useEffect(()=>{
 <tbody >
 {
 userData.map((item,index)=>
-<tr className={index % 2=== 0 ?"CourseControlPanelLight":"CourseControlPanelwhite"} key={index}>
+<tr className={index % 2=== 0 ?"ControlPanelLight":"ControlPanelwhite"} key={index}>
        <td >{index+1}</td>
        <td>{item.fname}</td>
        <td>{item.lname}</td>

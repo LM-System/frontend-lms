@@ -1,9 +1,10 @@
-.announcment-card {
+.announcement-card {
   border-radius: 10px;
   filter: drop-shadow(0 5px 10px 0 #ffffff);
   flex-basis: 100%;
   height: 180px;
   background-color: #ffffff;
+  color: var(--dark-mode-color);
   padding: 20px;
   position: relative;
   z-index: 0;
@@ -11,20 +12,17 @@
   box-shadow: 0px 0px 10px -5px black;
   transition: 0.1s;
 }
-
 @media (max-width: 575px) {
-  .announcment-card {
+  .announcement-card {
     border-radius: 10px;
     height: 180px;
-    background-color: #ffffff;
     padding: 20px;
     position: relative;
     z-index: 0;
     overflow: hidden;
   }
 }
-
-.announcment-card::before {
+/* .announcement-card::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -36,12 +34,12 @@
   border-radius: 10px 0px 0px 0px ;
   transform-origin: right;
   transition: 0.5s;
-}
-.announcment-card::after {
+} */
+.announcement-card::after {
   content: "";
   position: absolute;
   z-index: -1;
-  background: var(--first-color-linear);
+  background: var(--linear-gradient);
   height:100%;
   width: 10px;
   right: 0;
@@ -50,24 +48,22 @@
   transform-origin: right;
   transition: 0.5s;
 }
-.announcment-card:hover::before{
+/* .announcement-card:hover::before{
   width: 50%;
   transition: 0.5s;
-}
-.announcment-card:hover::after{
-  width: 50%;
+} */
+.announcement-card:hover::after{
+  /* width: 20%; */
   transition: 0.5s;
+  /* background: var(--first-color-linear) */
 }
-
-.announcment-card:hover{
-    color: #ffffff;
-    transition: 0.5s;
+.announcement-card:hover{
+  transition: 0.5s;
+  transform: scale(1.01);
 }
-
-.announcment-card p{
+.announcement-card p{
     padding: 10px 0;
 }
-
 .grid-container {
     display: flex;
     flex-wrap:wrap ;
@@ -76,6 +72,7 @@
     width: 100%;
     padding: 20px;
   } 
-  .grid-container.dark .announcment-card{
+.grid-container.dark .announcement-card{
     background-color: var(--dark-mode-background);
+    color: white;
   }

@@ -1,30 +1,26 @@
-.CourseControlPanelTable{
+table{
     min-width:100% ;
     border-spacing: 0px;
-    height: 30px;
     }
-    .CourseControlPanelTable th {
+    table th {
         background-color: #f53844;
         padding: 15px;
         text-align: left;
         color: #f1f1f1;
         font-weight: bold;
     }
-    .CourseControlPanelTable td {
+    table td {
         padding: 15px;
         width: calc(100% / 7);
     }
-    
     .light-white-table{
         background-color: #f2f2f2;
-        height: 20px;
     }
     .white-table{
         background-color: #fff;
-        
     }
 
-    .CourseControlPanelupdate-button{
+    .update-button{
     padding: 6px 12px;
     border-radius: 10px;
     color: #f2f2f2;
@@ -32,14 +28,14 @@
     border: 0.8px solid #ffc107;
     color: #2f2f2f;
     }
-    .CourseControlPaneldelete-button{
+    .delete-button{
     padding: 6px 12px;
     border-radius: 10px;
     color: #f2f2f2;
     background-color:#f53844 ;
     border: 0.8px solid #f53844;
     }
-    .CourseControlPanelcrud{
+    .crud{
         width: 50%;
         margin-left: auto;
         margin-right: auto;
@@ -47,23 +43,33 @@
         margin-bottom: 1rem;
         border-radius: 10px;
         box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.15);
-        background-color: white !important;
     }
-    .CourseControlPanelcrud >div{
+    .crud >div{
         margin-top: 1rem;
     }
-    .CourseControlPanel-h2{
-        color: black !important;
-    }
-    .CourseControlPanelLight td, .CourseControlPanelwhite td{
-        color: #2f2f2f !important;
-    }
-    .CourseControlPanelcrud-button{
+
+    .crud-button{
         margin-top: 2rem;
         padding: 12px 24px;
     }
     @media (max-width:575px) {
-        .CourseControlPanelcrud{
+        .crud{
             width: 100%;
         }
+    }
+    .crud-button{
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+    .inputItem{
+        width: 100%;
+        justify-content: center;
+    }
+   
+    .FormUp{
+        font-size: 20px;
+        font: bold;
+    }
+    .cursor{
+        cursor: pointer;
     }

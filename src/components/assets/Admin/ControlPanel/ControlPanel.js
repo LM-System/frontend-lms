@@ -69,8 +69,8 @@ export default function ControlPanel(props) {
 
     return (
   <>
-  {isAddUser && <div className="ControlPanelTableCrud">
-    <h2 className='ControlPanelh2-crud'>Add User Control Panel</h2>
+  {isAddUser && <div className="crud">
+    <h2 className='formTitleHide'>Add User Control Panel</h2>
     <TextField required fullWidth label="First Name"  onChange={LabelChangeUser} name='fname' id="fullWidth" />
     <TextField required fullWidth label="Last Name"  onChange={LabelChangeUser} name='lname' id="fullWidth" />
     <TextField required fullWidth label="Email"  onChange={LabelChangeUser} name='email' id="fullWidth" />
@@ -84,32 +84,32 @@ export default function ControlPanel(props) {
     <TextField required fullWidth label={isEndLabel} type='date'  onFocus={()=>setIsEndLabel("End Date")} onBlur={()=>setIsEndLabel("")} onChange={LabelChangeUser} name='end_date' id="fullWidth" />
     <TextField required fullWidth label="Users Role"  onChange={LabelChangeUser} name='role' id="fullWidth" />
   
-    <button className='ControlPanelupdate-button ControlPanelcrud-button' onClick={ async()=>{
+    <button className='update-button crud-button' onClick={ async()=>{
               console.log(addUser)
               const data=await axios.post(`${process.env.REACT_APP_SERVER_URL}adminsignup`,addUser)
               setUserData(data.data)
               setIsAddUser(false)
   
            }}>Add</button>
-              <button className='ControlPaneldelete-button ms-2 ControlPanelcrud-button' onClick={ async()=>{
+              <button className='delete-button ms-2 crud-button' onClick={ async()=>{
               setIsAddUser(false)
            }}>Cancel</button>
   </div>}
-  {isAddCourse && <div className="ControlPanelTableCrud">
-    <h2 className='ControlPanelh2-crud'>Courses Control Panel</h2>
+  {isAddCourse && <div className="crud">
+    <h2 className='formTitleHide'>Courses Control Panel</h2>
     <TextField fullWidth label="Course Title"  onChange={LabelChangeCourse} name='title' id="fullWidth" />
     <TextField fullWidth label="Course Descreption"  onChange={LabelChangeCourse} name='descreption' id="fullWidth" />
     <TextField fullWidth label={isStartLabel} type='date' onFocus={()=>setIsStartLabel("Start Date")} onBlur={()=>setIsStartLabel("")} onChange={LabelChangeCourse} name='start_date' id="fullWidth" />
     <TextField fullWidth label={isEndLabel} type='date' onFocus={()=>setIsEndLabel("End Date")} onBlur={()=>setIsEndLabel("")} onChange={LabelChangeCourse} name=' end_date' id="fullWidth" />
     <TextField fullWidth label="Users Role" value={courseInfo.role} onChange={LabelChangeCourse} name='role' id="fullWidth" />
   
-    <button className='ControlPanelupdate-button ControlPanelcrud-button' onClick={ async()=>{
+    <button className='update-button crud-button' onClick={ async()=>{
               const ItemRole=course.role;
               // console.log(ItemRole);
               const data=await axios.post(`${process.env.REACT_APP_SERVER_URL}admincourse/${userId}`,courseInfo)
               setIsAddCourse(false)
            }}>Update</button>
-             <button className='ControlPaneldelete-button ms-2 ControlPanelcrud-button' onClick={ async()=>{
+             <button className='delete-button ms-2 crud-button' onClick={ async()=>{
               setIsAddCourse(false)
            }}>Cancel</button>
   </div>}
@@ -143,13 +143,13 @@ export default function ControlPanel(props) {
                setcourseInfo({role:item.role})  
                setIsAddCourse(true) 
               console.log(courseInfo);  }
-          } className='ControlPanelupdate-button'>Update</button></td>
+          } className='update-button'>Update</button></td>
          <td><button
           onClick={ async ()=>{
             const data=await axios.delete(`${process.env.REACT_APP_SERVER_URL}deleteuser/${item.id}`)
             setUserData(data.data)
           }
-          } className='ControlPaneldelete-button'>Delete</button></td>
+          } className='delete-button'>Delete</button></td>
                   <td className='plus_th'></td>
   
   
