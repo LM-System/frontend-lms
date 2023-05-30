@@ -79,7 +79,7 @@ export default function AnnouncmentControlPanel(props) {
             )
          }}>Update</button>}
           
-       <button className='update-button crud-button' onClick={ ()=>{
+       <button className='delete-button crud-button' onClick={ ()=>{
             setIsClicked(false)
             setAnnouncmentContent({
               anouncment_title:'',
