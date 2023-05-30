@@ -113,16 +113,16 @@ export default function ControlPanel(props) {
               setIsAddCourse(false)
            }}>Cancel</button>
   </div>}
-  <table className="ControlPanelTable">
+  <table className="crudeTable">
   <thead> 
        <tr className="">
-         <th>index</th>
-         <th>First Name</th>
-         <th>Last Name</th>
-         <th>Role</th>
-         <th>Email</th>
-         <th>Update</th>
-         <th>Delete</th>
+         <th className='thOfControlTable'>index</th>
+         <th className='thOfControlTable'>First Name</th>
+         <th className='thOfControlTable'>Last Name</th>
+         <th className='thOfControlTable'>Role</th>
+         <th className='thOfControlTable'>Email</th>
+         <th className='thOfControlTable'>Update</th>
+         <th className='thOfControlTable'>Delete</th>
          <th className='plus_th'><AddCircleOutlineIcon className='ControlPanelcursor' onClick={()=>{
             setIsAddUser(true)
          }}/></th>
@@ -132,19 +132,19 @@ export default function ControlPanel(props) {
   {
   userData.map((item,index)=>
   <tr className={index % 2=== 0?"ControlPanelLight":"ControlPanelwhite"} key={index}>
-         <td >{item.id}</td>
-         <td>{item.fname}</td>
-         <td>{item.lname}</td>
-         <td>{item.email}</td>
-         <td>{item.role}</td>
-         <td><button
+         <td className='thOfControlTable'>{item.id}</td>
+         <td className='thOfControlTable'>{item.fname}</td>
+         <td className='thOfControlTable'>{item.lname}</td>
+         <td className='thOfControlTable'>{item.email}</td>
+         <td className='thOfControlTable'>{item.role}</td>
+         <td className='thOfControlTable'><button
           onClick={()=>{
               setUserId(item.id)  ;
                setcourseInfo({role:item.role})  
                setIsAddCourse(true) 
               console.log(courseInfo);  }
           } className='update-button'>Update</button></td>
-         <td><button
+         <td className='thOfControlTable'><button
           onClick={ async ()=>{
             const data=await axios.delete(`${process.env.REACT_APP_SERVER_URL}deleteuser/${item.id}`)
             setUserData(data.data)

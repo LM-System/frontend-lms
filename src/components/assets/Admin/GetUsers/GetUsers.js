@@ -14,7 +14,7 @@ console.log(usersData)
 
 return (
 <>
-<table className= {`${props.darkMode ? 'dark GetUsersTable' : "GetUsersTable"}`}>
+<table className= {`${props.darkMode ? 'dark GetUsersTable crudeTable' : "GetUsersTable crudeTable"}`}>
 <thead>
      <tr className="">
        <th>index</th>

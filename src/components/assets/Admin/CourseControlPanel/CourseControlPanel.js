@@ -59,27 +59,27 @@ useEffect(()=>{
             setIsAdd(false)
          }}>Cancel</button>
 </div>}
-<table className="CourseControlPanelTable">
+<table className="crudeTable">
 <thead> 
      <tr className="">
-       <th>index</th>
-       <th>First Name</th>
-       <th>Last Name</th>
-       <th>Role</th>
-       <th>Email</th>
-       <th>Add Course</th>
+       <th className='thOfControlTable'>index</th>
+       <th className='thOfControlTable'>First Name</th>
+       <th className='thOfControlTable'>Last Name</th>
+       <th className='thOfControlTable'>Role</th>
+       <th className='thOfControlTable'>Email</th>
+       <th className='thOfControlTable'>Add Course</th>
      </tr>
 </thead>
 <tbody >
 {
 userData.map((item,index)=>
 <tr className={index % 2=== 0 ?"ControlPanelLight":"ControlPanelwhite"} key={index}>
-       <td >{index+1}</td>
-       <td>{item.fname}</td>
-       <td>{item.lname}</td>
-       <td>{item.role}</td>
-       <td>{item.email}</td>
-       <td><button
+       <td className='thOfControlTable'>{index+1}</td>
+       <td className='thOfControlTable'>{item.fname}</td>
+       <td className='thOfControlTable'>{item.lname}</td>
+       <td className='thOfControlTable'>{item.role}</td>
+       <td className='thOfControlTable'>{item.email}</td>
+       <td className='thOfControlTable'><button
         onClick={()=>{
             setUserId(item.id)  ;
              setcourseInfo({role:item.role})  
