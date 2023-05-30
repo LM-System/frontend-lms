@@ -73,7 +73,7 @@ useEffect(()=>{
 <tbody >
 {
 userData.map((item,index)=>
-<tr className={index % 2=== 0 ?"CourseControlPanelLight":"CourseControlPanelwhite"} key={index}>
+<tr className={index % 2=== 0 ?"ControlPanelLight":"ControlPanelwhite"} key={index}>
        <td >{index+1}</td>
        <td>{item.fname}</td>
        <td>{item.lname}</td>
