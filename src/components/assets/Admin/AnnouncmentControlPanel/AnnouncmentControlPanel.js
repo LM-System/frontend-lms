@@ -111,6 +111,7 @@ export default function AnnouncmentControlPanel(props) {
        <th>Update</th>
        <th>Delete &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <AddCircleOutlineIcon className='cursor' onClick={()=>{
           setAddIsClicked(true)
+          setIsClicked(false)
           setShowForm(true)
           console.log(addIsClicked)
        }}/></th>
@@ -126,6 +127,7 @@ showAnnoucments.map((item,index)=>(
        <td><button
         onClick={()=>{
             scrollToTop()
+            setAddIsClicked(false)
             setIsClicked(true)
             setAnnouncmentNum(item.id)
             setAnnouncmentIndex(index)
