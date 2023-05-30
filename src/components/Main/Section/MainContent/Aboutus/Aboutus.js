@@ -21,24 +21,28 @@ export default function Aboutus(props) {
   const aboutObj =
   [
     {
+      member_major:"Computer Science",
       name: 'Mohammad AbuEssa',
       img_path: AbuEssa,
       linkedIn: 'https://www.linkedin.com/in/mohammad-a-8903911a0/',
       gitHub: 'https://github.com/MohammedAbuEssa'
     },
     {
+      member_major:"Electrical Power Engineer",
       name: 'Helmi Qatqat',
       img_path: Helmi,
       linkedIn: 'https://www.linkedin.com/in/helmiqatqat/',
       gitHub: 'https://github.com/Helmi-Qatqat'
     },
     {
+      member_major:"Pharmacist",
       name: 'Mohammad Keath',
       img_path: Zaytowna,
       linkedIn: 'https://www.linkedin.com/in/mhd-keath-zaytowna-407519258',
       gitHub: 'https://github.com/Mohammad-Keath'
     },
     {
+      member_major:"Computer Engineer",
       name: 'Malek Hasan',
       img_path: Malek,
       linkedIn: 'https://www.linkedin.com/in/malek-al-sheekh-hasan-1a451a25a',

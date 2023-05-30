@@ -10,7 +10,7 @@ export default function Sidebar(props) {
       ? [
           { id: 1, label: "Control Panel" },
           { id: 2, label: "Course Control Panel" },
-          { id: 3, label: "Users" },
+          // { id: 3, label: "Users" },
           { id: 4, label: "Announcment Control Panel" },
           { id: 5, label: 'about us'}
         ]

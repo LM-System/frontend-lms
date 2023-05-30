@@ -15,7 +15,7 @@ export default function MainContent(props) {
       ? {
           1: <ControlPanel {...props} />,
           2: <CourseControlPanel {...props}/>,
-          3: <GetUsers {...props} />,
+          // 3: <GetUsers {...props} />,
           4: <AnnouncmentControlPanel {...props}/>,
           5: <Aboutus {...props}/>,
         }

@@ -8,10 +8,16 @@ export default function ControlPanel(props) {
 
 
   const [userData,setUserData]=useState([])
-  const [course,setCourse]=useState({})
   const [userId,setUserId]=useState("")
-  const [isAddCourse,setIsAddCourse]=useState(false)
+  const [user,setUser]=useState("")
+
   const [isAddUser,setIsAddUser]=useState(false)
+  const [isClick,setIsClick]=useState(false)
+
+  const [isStartLabel,setIsStartLabel]=useState(false)
+  const [isEndLabel,setIsEndLabel]=useState(false)
+  const [isBirthLabel,setIsBirthLabel]=useState(false)
+  
   const [addUser,setAddUser]=useState({
     title:"",
     descreption:"",
@@ -26,10 +32,8 @@ export default function ControlPanel(props) {
     birth_date:"",
     gender:""
   })
-  const [isStartLabel,setIsStartLabel]=useState(false)
-  const [isEndLabel,setIsEndLabel]=useState(false)
-  const [isBirthLabel,setIsBirthLabel]=useState(false)
-  const [courseInfo,setcourseInfo]=useState({
+
+  const [userInfo,setUserInfo]=useState({
     title:"",
     descreption:"",
     role:"",
@@ -37,15 +41,16 @@ export default function ControlPanel(props) {
     end_date:""
   })
   
-  function LabelChangeCourse(event) {
+  function LabelChange(event) {
     const {name, value} = event.target
-    // console.log(courseInfo);
-        setcourseInfo(prevFormData => {
+    console.log(userInfo);
+      setUserInfo(prevFormData => {
             return {
                 ...prevFormData,
                 [name]: value,
             }
         })
+  
   }
   function LabelChangeUser(event) {
     const {name, value} = event.target
@@ -65,12 +70,18 @@ export default function ControlPanel(props) {
   }
   useEffect(()=>{
     getuserData();
-  },[userData])
+  },[userData,isClick,isAddUser])
+  // useEffect(()=>{
+  //   setIsAddUser(false)
+  // },[isClick])
+  // useEffect(()=>{
+  //   setIsClick(false)
+  // },[isAddUser])
 
     return (
   <>
   {isAddUser && <div className="crud">
-    <h2 className='formTitleHide'>Add User Control Panel</h2>
+    <h2 className='formTitleHide'>Add User Panel</h2>
     <TextField required fullWidth label="First Name"  onChange={LabelChangeUser} name='fname' id="fullWidth" />
     <TextField required fullWidth label="Last Name"  onChange={LabelChangeUser} name='lname' id="fullWidth" />
     <TextField required fullWidth label="Email"  onChange={LabelChangeUser} name='email' id="fullWidth" />
@@ -89,30 +100,30 @@ export default function ControlPanel(props) {
               const data=await axios.post(`${process.env.REACT_APP_SERVER_URL}adminsignup`,addUser)
               setUserData(data.data)
               setIsAddUser(false)
-  
            }}>Add</button>
               <button className='delete-button ms-2 crud-button' onClick={ async()=>{
               setIsAddUser(false)
            }}>Cancel</button>
   </div>}
-  {isAddCourse && <div className="crud">
-    <h2 className='formTitleHide'>Courses Control Panel</h2>
-    <TextField fullWidth label="Course Title"  onChange={LabelChangeCourse} name='title' id="fullWidth" />
-    <TextField fullWidth label="Course Descreption"  onChange={LabelChangeCourse} name='descreption' id="fullWidth" />
-    <TextField fullWidth label={isStartLabel} type='date' onFocus={()=>setIsStartLabel("Start Date")} onBlur={()=>setIsStartLabel("")} onChange={LabelChangeCourse} name='start_date' id="fullWidth" />
-    <TextField fullWidth label={isEndLabel} type='date' onFocus={()=>setIsEndLabel("End Date")} onBlur={()=>setIsEndLabel("")} onChange={LabelChangeCourse} name=' end_date' id="fullWidth" />
-    <TextField fullWidth label="Users Role" value={courseInfo.role} onChange={LabelChangeCourse} name='role' id="fullWidth" />
-  
-    <button className='update-button crud-button' onClick={ async()=>{
-              const ItemRole = course.role;
-              // console.log(ItemRole);
-              const data = await axios.post(`${process.env.REACT_APP_SERVER_URL}admincourse/${userId}`,courseInfo)
-              setIsAddCourse(false)
-           }}>Update</button>
-             <button className='delete-button ms-2 crud-button' onClick={ async()=>{
-              setIsAddCourse(false)
-           }}>Cancel</button>
-  </div>}
+ 
+  { isClick && <div className='crud'>
+  <h2 className='formTitleHide'>Control Panel</h2>
+  <TextField fullWidth label="First Name" value={userInfo.fname} onChange={LabelChange} name='fname' id="fullWidth" />
+  <TextField fullWidth label="Last Name" value={userInfo.lname} onChange={LabelChange} name='lname' id="fullWidth" />
+  <TextField fullWidth label="Email" value={userInfo.email} onChange={LabelChange} name='email' id="fullWidth" />
+  <TextField fullWidth label="Role" value={userInfo.role} onChange={LabelChange} name='role' id="fullWidth" />
+  <button className='update-button crud-button' onClick={ async()=>{
+            const ItemRole=user.role;
+            console.log(ItemRole);
+            const data=await axios.put(`${process.env.REACT_APP_SERVER_URL}updateuser/${userId}`,userInfo)
+            setUserData(data.data)
+            setIsClick(false)
+         }}>Update</button>
+  <button className='delete-button ms-2 crud-button' onClick={ async()=>{
+            setIsClick(false)
+         }}>Cancel</button>
+</div>}
+
   <table className="crudeTable">
   <thead> 
        <tr className="">
@@ -124,6 +135,7 @@ export default function ControlPanel(props) {
          <th className='thOfControlTable'>Update</th>
          <th className='thOfControlTable'>Delete</th>
          <th className='plus_th'><AddCircleOutlineIcon className='ControlPanelcursor' onClick={()=>{
+            setIsClick(false)
             setIsAddUser(true)
          }}/></th>
        </tr>
@@ -132,20 +144,23 @@ export default function ControlPanel(props) {
   {
   userData.map((item,index)=>
   <tr className={index % 2=== 0?"ControlPanelLight":"ControlPanelwhite"} key={index}>
-         <td className='thOfControlTable'>{item.id}</td>
+         <td className='thOfControlTable'>{index+1}</td>
          <td className='thOfControlTable'>{item.fname}</td>
          <td className='thOfControlTable'>{item.lname}</td>
          <td className='thOfControlTable'>{item.email}</td>
          <td className='thOfControlTable'>{item.role}</td>
          <td className='thOfControlTable'><button
           onClick={()=>{
+              setIsAddUser(false) 
               setUserId(item.id)  ;
-               setcourseInfo({role:item.role})  
-               setIsAddCourse(true) 
-              console.log(courseInfo);  }
+               setUser({role:item.role})  
+               setUserInfo(item)  
+               setIsClick(true)
+                }
           } className='update-button'>Update</button></td>
          <td className='thOfControlTable'><button
           onClick={ async ()=>{
+            setIsAddUser(false)
             const data=await axios.delete(`${process.env.REACT_APP_SERVER_URL}deleteuser/${item.id}`)
             setUserData(data.data)
           }
