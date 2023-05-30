@@ -102,14 +102,15 @@ export default function AnnouncmentControlPanel(props) {
           </div>
         ))}
       </div> */}
-      <table >
+      <table className='crudeTable' >
 <thead> 
      <tr className="">
-       <th>index</th>
-       <th>announcment title</th>
-       <th>announcment body</th>
-       <th>Update</th>
-       <th>Delete &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <AddCircleOutlineIcon className='cursor' onClick={()=>{
+       <th className='thOfControlTable'>index</th>
+       <th className='thOfControlTable'>announcment title</th>
+       <th className='thOfControlTable'>announcment body</th>
+       <th className='thOfControlTable'>Update</th>
+       <th className='thOfControlTable'>Delete </th>
+       <th className='plus_th'>  <AddCircleOutlineIcon className='cursor' onClick={()=>{
           setAddIsClicked(true)
           setIsClicked(false)
           setShowForm(true)
@@ -121,10 +122,10 @@ export default function AnnouncmentControlPanel(props) {
 {
 showAnnoucments.map((item,index)=>(
 <tr className={index % 2=== 0?"light-white-table":"white-table"} key={index}>
-       <td >{index+1}</td>
-       <td>{item.anouncment_title}</td>
-       <td>{item.anouncment_body}</td>
-       <td><button
+       <td className='thOfControlTable'>{index+1}</td>
+       <td className='thOfControlTable'>{item.anouncment_title}</td>
+       <td className='thOfControlTable'>{item.anouncment_body}</td>
+       <td className='thOfControlTable'><button
         onClick={()=>{
             scrollToTop()
             setAddIsClicked(false)
@@ -145,13 +146,15 @@ showAnnoucments.map((item,index)=>(
        
        
        
-       <td><button
+       <td className='thOfControlTable'><button
         onClick={async()=>{
           const ItemRole=item.role;
           console.log(ItemRole);
           const data=await axios.delete(`${process.env.REACT_APP_SERVER_URL}deleteanouncment/${item.id}`)
           setAnnouncmentsData(data.data)
        }} className='delete-button'>Delete</button></td>
+       <td className='plus_th'></td>
+  
     
 
      </tr>
