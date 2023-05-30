@@ -104,9 +104,9 @@ export default function ControlPanel(props) {
     <TextField fullWidth label="Users Role" value={courseInfo.role} onChange={LabelChangeCourse} name='role' id="fullWidth" />
   
     <button className='update-button crud-button' onClick={ async()=>{
-              const ItemRole=course.role;
+              const ItemRole = course.role;
               // console.log(ItemRole);
-              const data=await axios.post(`${process.env.REACT_APP_SERVER_URL}admincourse/${userId}`,courseInfo)
+              const data = await axios.post(`${process.env.REACT_APP_SERVER_URL}admincourse/${userId}`,courseInfo)
               setIsAddCourse(false)
            }}>Update</button>
              <button className='delete-button ms-2 crud-button' onClick={ async()=>{
@@ -116,11 +116,11 @@ export default function ControlPanel(props) {
   <table className="crudeTable">
   <thead> 
        <tr className="">
-         <th className='thOfControlTable'>index</th>
+         <th className='thOfControlTable'>Index</th>
          <th className='thOfControlTable'>First Name</th>
          <th className='thOfControlTable'>Last Name</th>
-         <th className='thOfControlTable'>Role</th>
          <th className='thOfControlTable'>Email</th>
+         <th className='thOfControlTable'>Role</th>
          <th className='thOfControlTable'>Update</th>
          <th className='thOfControlTable'>Delete</th>
          <th className='plus_th'><AddCircleOutlineIcon className='ControlPanelcursor' onClick={()=>{

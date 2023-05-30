@@ -15,7 +15,7 @@ export default function Annoucments(props) {
     <>
       <div className={`grid-container ${props.darkMode ? 'dark' : ''}`}>
         {announcements.map((item) => (
-          <div className="announcement-card">
+          <div className={`announcement-card ${props.darkMode ? 'dark' : ''}`}>
             <h4>{item.anouncment_title}</h4>
             <p>{item.anouncment_body}</p>
           </div>

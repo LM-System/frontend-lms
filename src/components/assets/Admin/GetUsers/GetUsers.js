@@ -17,11 +17,11 @@ return (
 <table className= {`${props.darkMode ? 'dark GetUsersTable crudeTable' : "GetUsersTable crudeTable"}`}>
 <thead>
      <tr className="">
-       <th>index</th>
+       <th>Index</th>
        <th>First Name</th>
        <th>Last Name</th>
-       <th>Role</th>
        <th>Email</th>
+       <th>Role</th>
 
      </tr>
 </thead>

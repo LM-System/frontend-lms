@@ -8,7 +8,7 @@ function CourseDescription(props){
   {/* <Card.Title id='coursesCardTitle'>Discription:</Card.Title> */}
  
   <Card.Text id='courseDesText'>
-  {props.thisCourseData.descreption}
+  {props.thisCourseData.descreption[0].toUpperCase() + props.thisCourseData.descreption.slice(1)}
 
   </Card.Text>
   

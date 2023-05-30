@@ -63,6 +63,8 @@
 }
 .announcement-card p{
     padding: 10px 0;
+    color: #555;
+    font-size: 16.35px;
 }
 .grid-container {
     display: flex;
@@ -75,4 +77,16 @@
 .grid-container.dark .announcement-card{
     background-color: var(--dark-mode-background);
     color: white;
+  }
+
+  .announcement-card h4 {
+    font-weight: bold;
+  }
+
+  .announcement-card p {
+    font-weight: 600;
+  }
+
+  .announcement-card.dark p{
+    color: #aaa
   }

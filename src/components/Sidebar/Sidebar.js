@@ -27,7 +27,7 @@ export default function Sidebar(props) {
         <Link to={'/'}>
         <div className='logo'>
           <img src={require("../assets/images/logo.png")} alt=''/>
-          <span>LMS</span>
+          <span style={{fontSize: '1.2rem'}}>Root Academy</span>
         </div>
         </Link>
         <Options

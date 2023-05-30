@@ -50,14 +50,14 @@ export default function AnnouncmentControlPanel(props) {
     <>
      {showForm && <div className= {`${props.darkMode ? 'dark crud' : "crud"}`}>
       {addIsClicked &&
-      <p className='formTitleHide'>send an announcment</p>}
+      <h2 className='formTitleHide'>Add Announcment</h2>}
       {isClicked &&
-      <p className='formTitleHide'>update announcment with index of {announcmentIndex+1} </p>}
+      <h2 className='formTitleHide'>Update Announcment </h2>}
       <p></p>
     
-     <TextField className='inputItem' value={announcmentContent.anouncment_title} label="announcment title" type="text"  name="anouncment_title" onChange={LabelChange} />
+     <TextField className='inputItem' value={announcmentContent.anouncment_title} label="Announcment Title" type="text"  name="anouncment_title" onChange={LabelChange} />
     <p></p>
-     <TextField className='inputItem' value={announcmentContent.anouncment_body} label="announcment body" type="text"  name="anouncment_body" onChange={LabelChange} />
+     <TextField className='inputItem' value={announcmentContent.anouncment_body} label="Announcment Body" type="text"  name="anouncment_body" onChange={LabelChange} />
      <p></p>
      {addIsClicked && <button 
         onClick={async()=>{ 
@@ -65,7 +65,7 @@ export default function AnnouncmentControlPanel(props) {
           setAddIsClicked(false)
           const serverUrl = `${process.env.REACT_APP_SERVER_URL}addanouncment`;
           const result = await axios.post(serverUrl,announcmentContent);
-       }} className='update-button crud-button'>send</button>}
+       }} className='update-button crud-button'>Add</button>}
        {isClicked &&
        <button className='update-button crud-button' onClick={ async()=>{
             const serverUrl = `${process.env.REACT_APP_SERVER_URL}updateanouncment/${announcmentNum}`;
@@ -88,7 +88,7 @@ export default function AnnouncmentControlPanel(props) {
             )
             setShowForm(false)
             setAddIsClicked(false)
-         }}>cancel </button>
+         }}>Cancel </button>
          <p></p>
          </div>}
     
@@ -105,9 +105,9 @@ export default function AnnouncmentControlPanel(props) {
       <table className='crudeTable' >
 <thead> 
      <tr className="">
-       <th className='thOfControlTable'>index</th>
-       <th className='thOfControlTable'>announcment title</th>
-       <th className='thOfControlTable'>announcment body</th>
+       <th className='thOfControlTable'>Index</th>
+       <th className='thOfControlTable'>Announcment Title</th>
+       <th className='thOfControlTable'>Announcment Body</th>
        <th className='thOfControlTable'>Update</th>
        <th className='thOfControlTable'>Delete </th>
        <th className='plus_th'>  <AddCircleOutlineIcon className='cursor' onClick={()=>{
