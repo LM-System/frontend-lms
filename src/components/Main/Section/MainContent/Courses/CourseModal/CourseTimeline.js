@@ -20,7 +20,7 @@ function CourseTimeline(props){
 return(
 
       <Card.Body className='timelineBody'>
-        <Card.Title className='coursesCardTitle'>Timeline:</Card.Title>
+        {/* <Card.Title className='coursesCardTitle'>Timeline:</Card.Title> */}
         <p></p>
         <Card.Text>
         <Timeline className={`${props.darkMode ? 'dark' : ""}`} position="alternate">

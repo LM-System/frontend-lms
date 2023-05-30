@@ -1,3 +1,6 @@
+p {
+  margin-bottom: 0;
+}
 .user-info {
   background-color: white;
   color: var(--dark-mode-color);

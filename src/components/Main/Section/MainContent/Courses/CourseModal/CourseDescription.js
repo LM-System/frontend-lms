@@ -3,11 +3,11 @@ import Card from 'react-bootstrap/Card';
 function CourseDescription(props){
   return(
 
-<Card.Body className='discriptionBody'>
-  <Card.Title className='coursesCardTitle'>Discription:</Card.Title>
+<Card.Body className= {`${props.darkMode ? 'dark' : ""}`}
+>
+  {/* <Card.Title id='coursesCardTitle'>Discription:</Card.Title> */}
  
-  <p></p>
-  <Card.Text>
+  <Card.Text id='courseDesText'>
   {props.thisCourseData.descreption}
 
   </Card.Text>

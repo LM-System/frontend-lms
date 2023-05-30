@@ -19,6 +19,7 @@
     .bottons:hover{
         color: gray;
     }
+    
 }
 #modalBody.dark{
     background-color: #222022;
@@ -68,3 +69,7 @@
         background-color: red !important;
        
     }
+.modalImage{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

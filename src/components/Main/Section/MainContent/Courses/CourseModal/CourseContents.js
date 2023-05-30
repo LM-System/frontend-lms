@@ -5,11 +5,7 @@ function CourseContents(props){
 return(
   <> 
       <Card.Body className={`${props.darkMode ? 'dark' : ""}`} >
-        <Card.Title className='coursesCardTitle'>Content:</Card.Title>
         <p></p>
-        {props.thisCourseData.title =='python' &&<Card.Text>
-        Hello from content
-          </Card.Text>}
           {props.thisCourseData.title.match('ython') !== null &&<Card.Text>
         <table className='contentTable'>
           <tr className='TrOfContent'>
@@ -88,6 +84,79 @@ return(
             <td className='TdOfContent'>Class 10: Recursive Function and Regex</td>
             <td className='TdOfContent'>Class 15: Databases</td>
             <td className='TdOfContent'>Class 20: Installation</td>            
+          </tr>
+        </table>
+          </Card.Text>}
+          {props.thisCourseData.title == "java" &&<Card.Text>
+        <table className='contentTable'>
+          <tr className='TrOfContent'>
+            <th className='ThOfContent'>Module #1 : Introduction to Java
+Programming – Part 1	</th>
+            <th className='ThOfContent'>Module #2 : Introduction to
+Object-Oriented
+Programming with Java…	</th>
+            <th className='ThOfContent'>Module #3 :Introduction to Java
+Programming: Starting to
+code in Java
+	</th>
+            <th className='ThOfContent'>Module #4 : Introduction to Java
+Programming:
+Fundamental Data Stru…
+</th>
+          </tr>
+          <tr className='TrOfContent'>
+            <td className='TdOfContent'>Class 01: AP Computer Science A:
+Java Programming</td>
+            <td className='TdOfContent'>Class 06: Java Programming: Basic
+Skills</td>
+            <td className='TdOfContent'>Class 11: Java Programming
+Fundamentals</td>
+            <td className='TdOfContent'>Class 16: CS50's Mobile App
+Development with React
+Native</td>
+          </tr>
+          <tr className='TrOfContent'>
+            <td className='TdOfContent'>Class 02: Fundamentals of Java EE
+Development</td>
+            <td className='TdOfContent'>Class 07: CS50's Web Programming
+with Python and
+JavaScript</td>
+            <td className='TdOfContent'>Class 12: CS50's Introduction to
+Computer Science</td>
+            <td className='TdOfContent'>Class 17: Introduction to
+Object-Oriented
+Programming with Java </td>            
+          </tr>
+          <tr className='TrOfContent'>
+            <td className='TdOfContent'>Class 03: Data Structures &
+Algorithms I: ArrayLists,
+LinkedLists and Stacks 
+</td>
+            <td className='TdOfContent'>Class 08: Introduction to Web
+Development with
+HTML5, CSS3, and Java</td>
+            <td className='TdOfContent'>Class 13: Guided Project:
+Containerize Java
+Microservices </td>
+            <td className='TdOfContent'>Class 18: Introduction to
+Object-Oriented
+Programming with Java</td>            
+          </tr>
+          <tr className='TrOfContent'>
+            <td className='TdOfContent'>Class 04:AP Computer Science A:
+Java Programming
+Polymorphism </td>
+            <td className='TdOfContent'>Class 09: Google AI for Java
+developers with
+TensorFlow</td>
+            <td className='TdOfContent'>Class 14: Machine Learning and AI Fundamentals</td>
+            <td className='TdOfContent'>Class 19: Intermediate Machine Learning</td>            
+          </tr>
+          <tr className='TrOfContent'>
+            <td className='TdOfContent'>Class 05: Learn Machine Learning</td>
+            <td className='TdOfContent'>Class 10: Getting Started with java for Data Science</td>
+            <td className='TdOfContent'>Class 15: Learn Data Visualization with java</td>
+            <td className='TdOfContent'>Class 20: Machine Learning: Introduction with Regression</td>            
           </tr>
         </table>
           </Card.Text>}

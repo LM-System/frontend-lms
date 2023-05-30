@@ -63,12 +63,15 @@ console.log(selectedNavOption)
                     <line/>
 
         <p></p>
-        {/* {props.thisCourseData.title.match('cript') !== null &&
-        <Image className='modalImage' src="https://www.classcentral.com/report/wp-content/uploads/2022/06/JavaScript-BCG-Banner-icons.png" rounded width='100%' />} */}
+        {props.thisCourseData.title !== undefined && props.thisCourseData.title.match('cript') !== null &&
+        <Image className='modalImage' src="https://www.classcentral.com/report/wp-content/uploads/2022/06/JavaScript-BCG-Banner-icons.png" rounded width='100%' />}
         
-        {/* {props.thisCourseData.title.match('ython') !== null && */}
-         <Image className='modalImage' src="https://trisectinstitute.com/wp-content/uploads/2021/12/best-python-training.png" rounded width='100%' />
-        <p></p>
+        {props.thisCourseData.title !== undefined && props.thisCourseData.title.match('ython') !== null &&
+         <Image className='modalImage' src="https://trisectinstitute.com/wp-content/uploads/2021/12/best-python-training.png" rounded width='100%' />}
+         
+        {props.thisCourseData.title !== undefined && props.thisCourseData.title== 'java' &&
+        <Image className='modalImage' src="https://mindqsystems.com/wp-content/uploads/2019/08/Core-Java-Training.jpg" rounded width='100%' />}       
+         <p></p>
        
         {navSectionContents[selectedNavOption || 0]}
      
