@@ -6,7 +6,7 @@ export default function AboutCard(props) {
       <div className="content">
         <div className="img"><img src={props.img_path} alt=""/></div>
         <div className="cardContent">
-          <h3>{props.name}<br/><span>Full Stack Web Developer</span></h3>
+          <h3>{props.name}<br/><span>{props.member_major}</span></h3>
         </div>
       </div>
       <ul className="sci">
